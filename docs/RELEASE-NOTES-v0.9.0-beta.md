@@ -13,15 +13,15 @@
 
 ## Validation
 
-All five offline test programs passed locally and [GitHub Actions](https://github.com/pedrogonzalez-png/Hyprland-Themes/actions/runs/45565469777) passed on the published installer commit. No clean Arch GUI test has been performed. See [development guide](DEVELOPMENT.md) and [release audit](../RELEASE-AUDIT.md).
+All five offline test programs passed locally and [GitHub Actions](https://github.com/pedrogonzalez-png/Hyprland-Themes/actions/runs/45565469777) passed on the published installer commit. [Latest source preview CI](https://github.com/pedrogonzalez-png/Hyprland-Themes/actions/runs/45572940832) also passed; these offline checks do not compile or validate the full HUD. No clean Arch GUI test has been performed. See [development guide](DEVELOPMENT.md) and [release audit](../RELEASE-AUDIT.md).
 
 ## Known limitations / release gates
 
 - Individual source provenance review is not exhaustive; preserve upstream copyright and licensing notices.
 - Compiled upstream shader source and third-party media rights are unresolved. Do not distribute prepared bundles.
 - The maintainer-approved screenshots and full recordings are demonstration assets, not installer content. Third-party artwork rights have not been independently verified.
-- HyprEndfield is not bundled; optional integration remains experimental.
-- A tagged beta and default-branch changes are not performed by this draft.
+- The personalized HyprEndfield source is available under `vendor/hyprendfield/`. The optional local installer requires an authorized archive with matching assets. The application binary and required game-derived assets are not bundled; fresh-install asset acquisition and GUI validation remain unresolved.
+- This draft is not a tagged beta or approval of the assembled distribution.
 
 ## Português (Brasil)
 

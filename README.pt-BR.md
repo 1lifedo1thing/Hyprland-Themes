@@ -2,7 +2,7 @@
 
 <p align="center"><a href="README.md">English</a> · <a href="CREDITS.md">Créditos</a> · <a href="LICENSE">GPL-3.0</a> · <a href="docs/DEVELOPMENT.md">Guia técnico</a></p>
 
-> **Prévia de desenvolvimento (somente código-fonte) — meta: v0.9.0-beta.** Disponível na branch development; ainda sem release beta. A montagem e a simulação foram testadas no Arch de origem; a instalação limpa e o funcionamento visual do pacote montado ainda não foram validados. A distribuição do pacote montado e a beta oficial dependem da [auditoria](RELEASE-AUDIT.md).
+> **Prévia de desenvolvimento (somente código-fonte) — meta: v0.9.0-beta.** Prévia pública de desenvolvimento; ainda sem release beta. A montagem e a simulação foram testadas no Arch de origem; a instalação limpa e o funcionamento visual do pacote montado ainda não foram validados. A distribuição do pacote montado e a beta oficial dependem da [auditoria](RELEASE-AUDIT.md).
 
 ## Um desktop. Infinitas identidades.
 
@@ -85,7 +85,7 @@ As capturas e os vídeos completos são demonstrações fornecidas pelo mantened
 | `desktop-base` | Hyprland e Matugen | Base preparada; seleciona também shell |
 | `desktop` | Todos os módulos acima | Todos os requisitos aplicáveis |
 
-Widgets e ferramentas de wallpaper fazem parte de `shell`, não são módulos independentes nesta versão. HyprEndfield é opcional: [compilação e instalação local a partir de um arquivo-fonte autorizado](docs/HYPRENDFIELD.md). O aplicativo, os recursos derivados do jogo e o SDDM não estão incluídos.
+Widgets e ferramentas de wallpaper fazem parte de `shell`, não são módulos independentes nesta versão. HyprEndfield é opcional: [compilação e instalação local a partir de um arquivo-fonte autorizado](docs/HYPRENDFIELD.md). O [código-fonte personalizado do HUD](vendor/hyprendfield/IRIDESHELL.md) está disponível para revisão; o aplicativo compilado, os recursos necessários derivados do jogo e o SDDM não estão incluídos.
 
 ## Experimente o instalador em ambiente descartável
 

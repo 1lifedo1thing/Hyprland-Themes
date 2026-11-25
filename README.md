@@ -2,7 +2,7 @@
 
 <p align="center"><a href="README.pt-BR.md">Português (Brasil)</a> · <a href="CREDITS.md">Credits</a> · <a href="LICENSE">GPL-3.0</a> · <a href="docs/DEVELOPMENT.md">Development guide</a></p>
 
-> **Source-only development preview — target: v0.9.0-beta.** Available on the development branch; no tagged beta yet. Assembly and dry-run were tested on the source Arch machine; clean-system installation and graphical runtime of the assembled package remain untested. The assembled distribution and official beta remain pending the [release audit](RELEASE-AUDIT.md).
+> **Source-only development preview — target: v0.9.0-beta.** Public development preview; no tagged beta yet. Assembly and dry-run were tested on the source Arch machine; clean-system installation and graphical runtime of the assembled package remain untested. The assembled distribution and official beta remain pending the [release audit](RELEASE-AUDIT.md).
 
 ## Make the desktop yours
 
@@ -85,7 +85,7 @@ Screenshots and full videos are maintainer-provided demonstrations, not wallpape
 | `desktop-base` | Hyprland and Matugen configuration | Prepared base; also selects shell |
 | `desktop` | All of the above | All applicable requirements |
 
-Widgets and wallpaper tools are part of `shell`, not separately installable modules yet. HyprEndfield is optional: [local build and installation from an authorized source archive](docs/HYPRENDFIELD.md). The application, game-derived assets and SDDM are not bundled.
+Widgets and wallpaper tools are part of `shell`, not separately installable modules yet. HyprEndfield is optional: [local build and installation from an authorized source archive](docs/HYPRENDFIELD.md). [Personalized HUD source](vendor/hyprendfield/IRIDESHELL.md) is available for review; the compiled application, required game-derived assets and SDDM are not bundled.
 
 ## Try the installer in a disposable environment
 
