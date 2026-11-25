@@ -62,6 +62,10 @@ For the shell or full desktop, `./setup prepare --apply` downloads pinned upstre
 
 Mutating operations require `--apply`; replacements require `--replace` where supported. File backups do not include personal wallpaper/layout state or system package changes. The installer does not automatically fetch updates or remove system packages.
 
+## Privacy and external services
+
+The fallback screenshot-search shortcut (`Super+Shift+A`, when Quickshell is not running) asks for confirmation before uploading the selected screenshot to uguu.se and opening Google Lens with its URL. Remote retention is controlled by those services. Cancel if the screen contains private information. The pinned upstream shell has its own online features; their network behavior has not been fully reviewed. See [release audit](RELEASE-AUDIT.md).
+
 ## License and attribution
 
 Irideshell is a derivative of [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland) and [pctrade/end4-pC](https://github.com/pctrade/end4-pC), maintained by [pedrogonzalez-png](https://github.com/pedrogonzalez-png). The GPL-covered code remains under GPL v3. Third-party notices and licenses remain applicable. See [credits](CREDITS.md), [upstream revisions](upstream-lock.json) and [release audit](RELEASE-AUDIT.md). No affiliation with the game or character rights holders is claimed.

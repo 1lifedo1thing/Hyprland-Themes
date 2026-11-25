@@ -1,0 +1,24 @@
+name: Installer offline tests
+on:
+  push:
+    branches: [main, development]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install fixture dependencies
+        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Run isolated tests
+        shell: bash
+        run: |
+          set -e
+          bash -n setup
+          bash -n staging/hypr/hyprland/scripts/snip_to_search.sh
+          for test in tests/*.py; do
+            python3 "$test"
+          done

@@ -47,3 +47,7 @@ Rebuild the prepared directory using `python3 scripts/refresh_prepared.py` (no n
 ## Source-only publication candidate
 
 This archive is a review candidate, not a released binary distribution. It includes the source overlays, installer and approved brand artwork only; no prepared upstream clones, compiled shaders, fonts, raw screenshots, videos or personal layout state. Dormant alternate collage/wallpaper writers and local systemd staging were excluded. Source-specific notices remain to be verified; compiled shader and other upstream media rights remain unresolved, so do not publish an assembled release or claim clearance.
+
+## Final local follow-up
+
+The fallback screenshot search now requires explicit consent and uses private temporary storage. Both READMEs document the upload. This does not validate other upstream network integrations or resolve upstream media rights. Offline CI runs the fixture tests, not a clean Arch GUI installation.

@@ -62,6 +62,10 @@ Para o shell ou desktop completo, `./setup prepare --apply` baixa as revisões f
 
 Operações de escrita exigem `--apply`; substituições exigem `--replace` quando aceito. Os backups não abrangem os wallpapers/layouts pessoais nem mudanças em pacotes do sistema. Não há atualização automática pela rede ou remoção de pacotes.
 
+## Privacidade e serviços externos
+
+O atalho alternativo de pesquisa por captura (`Super+Shift+A`, quando o Quickshell não está em execução) pede confirmação antes de enviar a região selecionada ao uguu.se e abrir o Google Lens com a URL. A retenção remota depende desses serviços. Cancele se houver informações privadas na tela. O shell original possui recursos online próprios, cujo comportamento de rede ainda não foi integralmente revisado. Consulte a [auditoria](RELEASE-AUDIT.md).
+
 ## Licença e créditos
 
 Projeto derivado de [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland) e [pctrade/end4-pC](https://github.com/pctrade/end4-pC), mantido por [pedrogonzalez-png](https://github.com/pedrogonzalez-png). O código abrangido pela GPL continua sob GPL v3. Licenças e avisos de terceiros permanecem aplicáveis. Consulte [créditos](CREDITS.md), [revisões originais](upstream-lock.json) e [auditoria](RELEASE-AUDIT.md). Não há vínculo oficial com os titulares das artes e marcas.

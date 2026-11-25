@@ -9,3 +9,5 @@ Changes developed during October–November 2026 include persistent widget layou
 2026-11-25: Irideshell documentation and original vector brand draft; compact Rofi alignment updated to the settings visually tested on the source machine. Internal paths remain unchanged.
 
 2026-11-25: approved black/gold/white branding; excluded dormant standalone collage writer, private staging service helpers and duplicate scheme snapshots from the publication candidate. No runtime changes to the source desktop.
+
+2026-11-25: require explicit consent for the fallback screenshot upload, use private temporary storage, document external services, and restore offline installer CI.
