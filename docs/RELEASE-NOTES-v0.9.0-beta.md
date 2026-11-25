@@ -13,7 +13,7 @@
 
 ## Validation
 
-All five offline test programs passed locally and [GitHub Actions](https://github.com/pedrogonzalez-png/Hyprland-Themes/actions/runs/45565469777) passed on the published installer commit. [Latest source preview CI](https://github.com/pedrogonzalez-png/Hyprland-Themes/actions/runs/45572940832) also passed; these offline checks do not compile or validate the full HUD. No clean Arch GUI test has been performed. See [development guide](DEVELOPMENT.md) and [release audit](../RELEASE-AUDIT.md).
+The original five offline test programs passed locally and [GitHub Actions](https://github.com/pedrogonzalez-png/Hyprland-Themes/actions/runs/45565469777) passed on the published installer commit. [Latest source preview CI](https://github.com/pedrogonzalez-png/Hyprland-Themes/actions/runs/45572940832) also passed; these offline checks do not compile or validate the full HUD. [Directory-based HUD resource assembly CI](https://github.com/pedrogonzalez-png/Irideshell/actions/runs/45655878826) also passed, and the maintainer verified all 373 expected local asset hashes and 242 source files in a dry run. No archive was written or installation performed in that check. No clean Arch GUI test has been performed. See [development guide](DEVELOPMENT.md) and [release audit](../RELEASE-AUDIT.md).
 
 ## Known limitations / release gates
 
