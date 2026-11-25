@@ -15,3 +15,19 @@ Add `--apply` to create the archive after successful verification. Then run `./s
 ## Português
 
 Código personalizado do HUD, com os avisos MIT originais preservados. Os recursos gráficos, dados do jogo, fontes binárias e áudio não estão incluídos. O comando acima verifica os recursos de um arquivo local autorizado; `--apply` gera uma cópia local para o instalador já publicado. O manifesto exige os arquivos exatos desta versão. A obtenção de recursos compatíveis para novos usuários ainda não foi resolvida. Não publique o arquivo montado. A montagem não modifica o desktop nem executa o HUD.
+
+## Alternative: assemble from local folders / Montagem a partir de pastas
+
+If you already have an authorized matching HyprEndfield checkout, you no longer need to create an input tarball:
+
+```sh
+python3 vendor/hyprendfield/assemble-local.py --assets-dir "$HOME/Apps/HyprEndfield" --output "$HOME/Downloads/HyprEndfield-local-build.tar.gz"
+```
+
+Add `--apply` only after verification succeeds. The output must not exist yet. You can repeat `--assets-dir` to combine project roots containing the expected `assets/` paths. Each file must match the exact size and SHA-256 in the manifest; missing, mismatching and symbolic-link resources are refused. The helper makes no network requests.
+
+### Provenance inventory (2026-11-25)
+
+The [Linux port tree at e040bbd](https://github.com/OctoberPrayRain/HyprEndfield/tree/e040bbdc6fa1e348aa33baaf225beb22048977d2) contains 365 of 373 expected resource paths with matching sizes; byte identity for these 365 has not been established. The two map binaries `Countries.bin` and `Terrain.bin` match the corresponding [EndfieldHUD upstream map files](https://github.com/DDDuoDuo/EndfieldHUD/tree/97cab1497e3993d2f5018717448073e977ce1e69/Resources/WorldMap) by Git blob SHA-1. Six map PNGs remain without established provenance: disc-mask, player-beam, player-glyph, player-halo, terrain and world-detail. Availability and matching hashes do not establish permission to use or redistribute artwork. Supply only resources you are authorized to use. This is not an automatic fresh-install acquisition workflow.
+
+Em português: use `--assets-dir` com uma pasta local autorizada que contenha `assets/`. É possível repetir o argumento para combinar pastas. A montagem verifica os hashes, não baixa nada e não modifica o desktop. Seis imagens do mapa ainda precisam de revisão de origem e direitos.

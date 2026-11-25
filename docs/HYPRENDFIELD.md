@@ -37,3 +37,7 @@ This local archive workflow does not supply the HUD to new users without an auth
 ## Published source preview / Código-fonte
 
 See [the source and local assembly instructions](../vendor/hyprendfield/IRIDESHELL.md). The 373 asset hashes describe local resources, not bundled files. The assembly helper reconstructs the exact source archive when supplied with matching authorized assets. It does not fetch or install anything. The assembled archive is for local use only and must not be committed. A fresh-install asset acquisition workflow is still unresolved.
+
+## Local directory workflow
+
+The assembly helper also accepts one or more authorized local project roots via `--assets-dir`, rather than requiring an input tarball. See the [directory workflow and provenance inventory](../vendor/hyprendfield/IRIDESHELL.md#alternative-assemble-from-local-folders--montagem-a-partir-de-pastas). It verifies the same 373 resource hashes and writes only the requested local archive when `--apply` is supplied. The native dashboard remains the supported default for users without compatible HUD assets.
