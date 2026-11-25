@@ -2,7 +2,7 @@
 
 <p align="center"><a href="README.md">English</a> · <a href="CREDITS.md">Créditos</a> · <a href="LICENSE">GPL-3.0</a> · <a href="docs/DEVELOPMENT.md">Guia técnico</a></p>
 
-> **Prévia de desenvolvimento (somente código-fonte) — meta: v0.9.0-beta.** Ainda não publicada. A montagem e a simulação foram testadas no Arch de origem; a instalação limpa e o funcionamento visual do pacote montado ainda não foram validados. A publicação depende da [auditoria](RELEASE-AUDIT.md).
+> **Prévia de desenvolvimento (somente código-fonte) — meta: v0.9.0-beta.** Disponível na branch development; ainda sem release beta. A montagem e a simulação foram testadas no Arch de origem; a instalação limpa e o funcionamento visual do pacote montado ainda não foram validados. A distribuição do pacote montado e a beta oficial dependem da [auditoria](RELEASE-AUDIT.md).
 
 ## Um desktop. Infinitas identidades.
 
@@ -21,7 +21,11 @@ As funcionalidades combinam contribuições dos projetos originais e modificaç�
 
 ## Galeria e demonstrações
 
-As capturas e os dois vídeos estão selecionados para a apresentação. Os links serão adicionados somente após revisão dos direitos das artes e da privacidade. Wallpapers pessoais, artes de personagens e perfis privados completos não acompanham o pacote. Veja o [plano de mídia](docs/MEDIA-PLAN.md).
+![As 15 paletas escuras do Irideshell](assets/gallery/palettes.svg)
+
+A galeria usa as cores reais dos JSONs de temas publicados. É uma referência de paletas, não uma captura do desktop. Consulte a [tabela completa](docs/PALETTES.md).
+
+Capturas e dois vídeos permanecem fora do repositório até a revisão dos direitos das artes e da privacidade. Wallpapers pessoais e layouts privados completos não acompanham o pacote. Veja o [plano de mídia](docs/MEDIA-PLAN.md).
 
 ## Módulos
 

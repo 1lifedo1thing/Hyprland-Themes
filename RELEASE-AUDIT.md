@@ -51,3 +51,9 @@ This archive is a review candidate, not a released binary distribution. It inclu
 ## Final local follow-up
 
 The fallback screenshot search now requires explicit consent and uses private temporary storage. Both READMEs document the upload. This does not validate other upstream network integrations or resolve upstream media rights. Offline CI runs the fixture tests, not a clean Arch GUI installation.
+
+## Published source review — 2026-11-25
+
+The development branch was pushed at `0a20b57e465b3e35821e63dc859a04e7d15e61b9`. [Offline GitHub Actions tests](https://github.com/pedrogonzalez-png/Hyprland-Themes/actions/runs/45565469777) completed successfully. This is not clean-system or graphical runtime validation.
+
+The root GPL text, the three end-4 license directory files (MIT, LGPL-3.0 and README), the Ollama helper Apache notice, the pctrade root license, handwriting font notices, and shapes Apache notice all have Git blob hashes identical to the respective pinned upstream copies (8 of 8). A path-based comparison of 90 staging files found 34 identical to the corresponding pinned upstream path, 38 changed, and 18 with no corresponding path at the selected revisions. This is a provenance inventory, not a comprehensive individual copyright review. No clearance is asserted for upstream media or compiled shaders. Keep the assembled tree, videos and raw screenshots out of public release assets pending review.

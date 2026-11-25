@@ -2,7 +2,7 @@
 
 <p align="center"><a href="README.pt-BR.md">Português (Brasil)</a> · <a href="CREDITS.md">Credits</a> · <a href="LICENSE">GPL-3.0</a> · <a href="docs/DEVELOPMENT.md">Development guide</a></p>
 
-> **Source-only development preview — target: v0.9.0-beta.** Not yet released. Assembly and dry-run were tested on the source Arch machine; clean-system installation and graphical runtime of the assembled package remain untested. Public distribution is pending the [release audit](RELEASE-AUDIT.md).
+> **Source-only development preview — target: v0.9.0-beta.** Available on the development branch; no tagged beta yet. Assembly and dry-run were tested on the source Arch machine; clean-system installation and graphical runtime of the assembled package remain untested. The assembled distribution and official beta remain pending the [release audit](RELEASE-AUDIT.md).
 
 ## Make the desktop yours
 
@@ -21,7 +21,11 @@ These features originate in both upstream projects and the derivative's modifica
 
 ## Showcase
 
-The gallery and two demonstration videos have been selected for the release draft. They will be linked here only after media-rights and privacy review. Personal wallpapers, character artwork and complete private layout profiles are not bundled. See [media plan](docs/MEDIA-PLAN.md).
+![The 15 Irideshell dark palettes](assets/gallery/palettes.svg)
+
+The swatches are derived from the actual published theme JSON files. This is a palette reference, not a screenshot of a running desktop. See the [full palette table](docs/PALETTES.md).
+
+Desktop screenshots and two recorded demonstrations are retained privately until their artwork rights and privacy review are complete. Personal wallpapers and complete private layouts are not bundled. See [media plan](docs/MEDIA-PLAN.md).
 
 ## Modules
 
