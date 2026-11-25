@@ -85,7 +85,7 @@ Screenshots and full videos are maintainer-provided demonstrations, not wallpape
 | `desktop-base` | Hyprland and Matugen configuration | Prepared base; also selects shell |
 | `desktop` | All of the above | All applicable requirements |
 
-Widgets and wallpaper tools are part of `shell`, not separately installable modules yet. HyprEndfield is optional integration code only; the application and SDDM are not bundled.
+Widgets and wallpaper tools are part of `shell`, not separately installable modules yet. HyprEndfield is optional: [local build and installation from an authorized source archive](docs/HYPRENDFIELD.md). The application, game-derived assets and SDDM are not bundled.
 
 ## Try the installer in a disposable environment
 

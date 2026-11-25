@@ -85,7 +85,7 @@ As capturas e os vídeos completos são demonstrações fornecidas pelo mantened
 | `desktop-base` | Hyprland e Matugen | Base preparada; seleciona também shell |
 | `desktop` | Todos os módulos acima | Todos os requisitos aplicáveis |
 
-Widgets e ferramentas de wallpaper fazem parte de `shell`, não são módulos independentes nesta versão. HyprEndfield possui somente código de integração opcional; o aplicativo e o SDDM não estão incluídos.
+Widgets e ferramentas de wallpaper fazem parte de `shell`, não são módulos independentes nesta versão. HyprEndfield é opcional: [compilação e instalação local a partir de um arquivo-fonte autorizado](docs/HYPRENDFIELD.md). O aplicativo, os recursos derivados do jogo e o SDDM não estão incluídos.
 
 ## Experimente o instalador em ambiente descartável
 

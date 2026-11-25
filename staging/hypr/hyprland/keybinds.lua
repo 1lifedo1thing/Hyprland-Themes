@@ -379,4 +379,14 @@ hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(taskManager), { description = "
 --## Make window not amogus large
 hl.bind("CTRL + SUPER + Backslash", hl.dsp.window.resize({ x = 640, y = 480, "exact" }))
 
+-- Optional HyprEndfield HUD. The native dashboard shortcut above stays unchanged.
+hl.define_submap("hyprendfield", function()
+    local function closeEndfield()
+        hl.dispatch(hl.dsp.submap("reset"))
+        hl.dispatch(hl.dsp.exec_cmd('"$HOME/.local/bin/hyprendfield" --hide'))
+    end
 
+    hl.bind("ESCAPE", closeEndfield)
+    hl.bind("SUPER + ALT + down", closeEndfield)
+    hl.bind("CTRL + SHIFT + ESCAPE", hl.dsp.submap("reset"))
+end)

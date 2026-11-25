@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")"
+if [[ ${1:-} == hud ]]; then
+    shift
+    exec python3 scripts/build_hyprendfield.py "$@"
+fi
 exec python3 scripts/setup.py "$@"

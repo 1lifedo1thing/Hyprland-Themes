@@ -19,10 +19,10 @@ All five offline test programs passed locally and [GitHub Actions](https://githu
 
 - Individual source provenance review is not exhaustive; preserve upstream copyright and licensing notices.
 - Compiled upstream shader source and third-party media rights are unresolved. Do not distribute prepared bundles.
-- Screenshots and recordings are withheld pending privacy and art-rights review. The palette gallery uses actual configuration values only.
+- The maintainer-approved screenshots and full recordings are demonstration assets, not installer content. Third-party artwork rights have not been independently verified.
 - HyprEndfield is not bundled; optional integration remains experimental.
 - A tagged beta and default-branch changes are not performed by this draft.
 
 ## Português (Brasil)
 
-Prévia de desenvolvimento com 15 temas, integração de wallpapers, layouts de widgets, mosaicos por tema, instalador modular e gerenciamento de backups. Os testes offline passaram localmente e no GitHub. A instalação limpa e a interface do pacote montado ainda não foram validadas. A release oficial e as mídias aguardam a revisão de direitos e privacidade. Consulte a [documentação](../README.pt-BR.md).
+Prévia de desenvolvimento com 15 temas, integração de wallpapers, layouts de widgets, mosaicos por tema, instalador modular e gerenciamento de backups. Os testes offline passaram localmente e no GitHub. A instalação limpa e a interface do pacote montado ainda não foram validadas. As mídias de demonstração foram aprovadas pelo mantenedor. A release oficial ainda aguarda a revisão de direitos. Consulte a [documentação](../README.pt-BR.md).
