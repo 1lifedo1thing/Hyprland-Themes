@@ -20,3 +20,5 @@ This is an unofficial fan project. Character and game names, trademarks and artw
 - HarmonyOS Sans, Huawei Device Co., Ltd., copyright 2021; [retained font license agreement](vendor/hyprendfield/notices/fonts/HarmonyOS-Sans-LICENSE.txt). Font binaries are not bundled.
 
 These notices apply to their respective components, not to all game-derived visual or audio resources. The personalized HUD source requires separately supplied matching authorized resources. See [HUD documentation](docs/HYPRENDFIELD.md) and [source provenance](vendor/hyprendfield/IRIDESHELL.md). The public demonstration media is provided by the maintainer; rights to underlying art have not been independently verified.
+
+The optional map uses data with separate provenance, including NOAA ETOPO, Natural Earth, WGII and AMap. See the [map provenance review](vendor/hyprendfield/IRIDESHELL.md#world-map-provenance-follow-up--2026-11-25) for the upstream manifest references, limitations and unresolved redistribution permissions.
