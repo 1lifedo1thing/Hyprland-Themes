@@ -2,7 +2,7 @@
 
 <p align="center"><a href="README.md">English</a> · <a href="CREDITS.md">Créditos</a> · <a href="LICENSE">GPL-3.0</a> · <a href="docs/DEVELOPMENT.md">Guia técnico</a></p>
 
-> **Prévia de desenvolvimento (somente código-fonte) — meta: v0.9.0-beta.** Prévia pública de desenvolvimento; ainda sem release beta. A montagem e a simulação foram testadas no Arch de origem; a instalação limpa e o funcionamento visual do pacote montado ainda não foram validados. A distribuição do pacote montado e a beta oficial dependem da [auditoria](RELEASE-AUDIT.md).
+> **Prévia experimental de código-fonte — candidata v0.9.0-beta.** Os testes offline do instalador e a verificação dos recursos locais passaram. A instalação em Arch limpo e o funcionamento gráfico ainda não foram validados. Não fornecemos o desktop montado nem o binário do HUD. Consulte as [notas da versão](docs/RELEASE-NOTES-v0.9.0-beta.md), [créditos](CREDITS.md) e [auditoria](RELEASE-AUDIT.md).
 
 ## Um desktop. Infinitas identidades.
 

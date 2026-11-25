@@ -21,3 +21,7 @@ The [palette reference](PALETTES.md) and its SVG use the 15 published JSON schem
 ## Maintainer-approved demonstration assets
 
 Nine WebP screenshots and both full silent demonstration MP4 files (60 s and 65 s) are provided by the maintainer, who confirmed that the information visible in the recordings may be shared publicly. No additional redactions or cuts were made to these video files. The optional HyprEndfield application shown in the showcase is not bundled. The maintainer confirmed permission to use the demonstration media; underlying artwork permissions were not independently verified. Third-party art is not covered by the code's GPL. Demonstration files are separate from the installer. This does not clear the assembled distribution or official release.
+
+## Source archive boundary
+
+The earlier editorial plan is historical. The currently published demonstrations remain visible in the repository. Their directories are marked export-ignore in the root .gitattributes for git archive; generated archive contents must be checked before redistribution. The public repository and issue-hosted video embeds are not affected by this rule. The gallery paths may be absent in exported archives; view the repository README online for demonstrations. No additional permission or takedown status is implied.

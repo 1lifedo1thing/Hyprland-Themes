@@ -69,3 +69,7 @@ The current public repository includes maintainer-provided demonstration screens
 ### Map provenance follow-up
 
 The two local expected map SHA-256 values match the upstream published provenance manifests. NOAA ETOPO terrain is declared CC0-1.0; the country dataset combines public-domain Natural Earth with WGII/AMap boundary data subject to a stated upstream permission whose scope for this derivative is unresolved. Upstream marker source references do not clear the six local PNGs. See [world-map provenance](vendor/hyprendfield/IRIDESHELL.md#world-map-provenance-follow-up--2026-11-25). Keep the assets local; this is not release approval.
+
+## Documentation handoff
+
+The maintainer requested completion without a VM test. Clean-system GUI validation therefore remains unperformed. The beta candidate notes, bilingual quick start and credits describe the supported source-preview scope and the unresolved permissions. The root .gitattributes excludes demonstration screenshot and video directories from git archive exports; verify generated archives before distributing them. This does not remove media from Git history or establish the rights to publish it online. No assembled bundle or HUD resource archive is approved for release. The official release status must be checked on GitHub Releases.

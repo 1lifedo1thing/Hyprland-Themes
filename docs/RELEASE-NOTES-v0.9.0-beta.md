@@ -1,28 +1,30 @@
-# Irideshell v0.9.0-beta — draft release notes
+# Irideshell v0.9.0-beta — release candidate
 
-**Status: draft, not a tagged release.** Source-only development preview; assembled redistributable package not approved.
+**One desktop. Infinite identities.**
+
+Experimental source preview; not a production-ready desktop distribution. The GitHub Releases page is the authoritative publication status.
 
 ## Highlights
 
 - 15 named color schemes with wallpaper-linked palette selection.
-- Per-wallpaper widget layouts and per-theme collage profiles in the source overlays.
+- Per-wallpaper widget layouts and per-theme collage profiles.
+- Static and animated wallpaper management and Theme Studio.
 - Modular shell, desktop-base, themes, launcher and terminal setup.
-- Read-only installation preview by default; file-level backup, update, restore and uninstall safeguards.
-- English and Brazilian Portuguese documentation; black, gold and white branding.
-- Confirmation before screenshot upload through the alternate image search helper.
+- Dry-run by default; file-level backup, update, restore and uninstall.
+- Optional experimental HyprEndfield integration with separately supplied authorized resources.
+- English and Brazilian Portuguese documentation.
+- Explicit confirmation before screenshot upload through the alternate search helper.
 
 ## Validation
 
-The original five offline test programs passed locally and [GitHub Actions](https://github.com/pedrogonzalez-png/Hyprland-Themes/actions/runs/45565469777) passed on the published installer commit. [Latest source preview CI](https://github.com/pedrogonzalez-png/Hyprland-Themes/actions/runs/45572940832) also passed; these offline checks do not compile or validate the full HUD. [Directory-based HUD resource assembly CI](https://github.com/pedrogonzalez-png/Irideshell/actions/runs/45655878826) also passed, and the maintainer verified all 373 expected local asset hashes and 242 source files in a dry run. No archive was written or installation performed in that check. No clean Arch GUI test has been performed. See [development guide](DEVELOPMENT.md) and [release audit](../RELEASE-AUDIT.md).
+The original offline tests passed locally. [Installer and HUD assembly CI](https://github.com/pedrogonzalez-png/Irideshell/actions/runs/45655878826) passed. The maintainer's local dry run verified 242 source files and the exact hashes of 373 local HUD resources. No archive was written or installation performed in that check. Clean Arch GUI testing was not performed, by project decision. Offline tests do not establish runtime compatibility.
 
-## Known limitations / release gates
+## Installation and limitations
 
-- Individual source provenance review is not exhaustive; preserve upstream copyright and licensing notices.
-- Compiled upstream shader source and third-party media rights are unresolved. Do not distribute prepared bundles.
-- The maintainer-approved screenshots and full recordings are demonstration assets, not installer content. Third-party artwork rights have not been independently verified.
-- The personalized HyprEndfield source is available under `vendor/hyprendfield/`. The optional local installer requires an authorized archive with matching assets. The application binary and required game-derived assets are not bundled; fresh-install asset acquisition and GUI validation remain unresolved.
-- This draft is not a tagged beta or approval of the assembled distribution.
+Start with the [README](../README.md) or [Portuguese README](../README.pt-BR.md). Read the [technical guide](DEVELOPMENT.md) before applying changes. The native dashboard is the default. The [HUD source and local assembly instructions](../vendor/hyprendfield/IRIDESHELL.md) do not provide a standalone acquisition workflow.
+
+No prepared bundle, compiled HUD or game-derived HUD resources are supplied. Source provenance review is not exhaustive; upstream shader source and third-party media rights remain unresolved. Preserve the [credits and applicable licenses](../CREDITS.md). Maintainer-approved demonstration media remains in the repository; underlying artwork rights have not been independently verified. Git archive export rules exclude the demonstration screenshots and MP4 files; verify any archive before redistributing it. Do not attach the assembled desktop or HUD resource archive to a release. See [release audit](../RELEASE-AUDIT.md). This document is not a legal clearance or an assertion that a release has been published.
 
 ## Português (Brasil)
 
-Prévia de desenvolvimento com 15 temas, integração de wallpapers, layouts de widgets, mosaicos por tema, instalador modular e gerenciamento de backups. Os testes offline passaram localmente e no GitHub. A instalação limpa e a interface do pacote montado ainda não foram validadas. As mídias de demonstração foram aprovadas pelo mantenedor. A release oficial ainda aguarda a revisão de direitos. Consulte a [documentação](../README.pt-BR.md).
+Prévia experimental de código-fonte com 15 temas, wallpapers, widgets, mosaicos, integração opcional do HyprEndfield e instalador modular. Os testes offline passaram e os 373 recursos locais do HUD tiveram seus hashes conferidos. A instalação gráfica em Arch limpo não foi validada por decisão do projeto. O dashboard nativo é padrão; o HUD exige recursos locais autorizados. Não distribuímos o desktop montado ou o binário do HUD. Direitos de mídias e recursos de terceiros permanecem em revisão. Consulte o [README em português](../README.pt-BR.md) e os [créditos](../CREDITS.md). O estado da publicação oficial deve ser consultado na página de Releases do GitHub.

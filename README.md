@@ -2,7 +2,7 @@
 
 <p align="center"><a href="README.pt-BR.md">Português (Brasil)</a> · <a href="CREDITS.md">Credits</a> · <a href="LICENSE">GPL-3.0</a> · <a href="docs/DEVELOPMENT.md">Development guide</a></p>
 
-> **Source-only development preview — target: v0.9.0-beta.** Public development preview; no tagged beta yet. Assembly and dry-run were tested on the source Arch machine; clean-system installation and graphical runtime of the assembled package remain untested. The assembled distribution and official beta remain pending the [release audit](RELEASE-AUDIT.md).
+> **Experimental source preview — v0.9.0-beta candidate.** Offline installer tests and local resource verification passed. Clean Arch installation and graphical runtime remain untested. No prepared desktop bundle or HUD binary is supplied. See the [release notes](docs/RELEASE-NOTES-v0.9.0-beta.md), [credits](CREDITS.md) and [release audit](RELEASE-AUDIT.md).
 
 ## Make the desktop yours
 

@@ -1,0 +1,3 @@
+# Demonstrations stay in the repository, not in git archive source exports.
+/assets/screenshots export-ignore
+/assets/videos export-ignore
