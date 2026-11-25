@@ -1,0 +1,1741 @@
+{
+  "schema": 1,
+  "source_files": [
+    "CMakeLists.txt",
+    "LICENSE",
+    "README.md",
+    "qml/AboutPage.qml",
+    "qml/AccountGauge.qml",
+    "qml/AccountPage.qml",
+    "qml/ActivityFormat.js",
+    "qml/ActivityMetricRow.qml",
+    "qml/ActivityPage.qml",
+    "qml/AppShortcutsPage.qml",
+    "qml/Appearance.js",
+    "qml/ArchiveCategoryPlate.qml",
+    "qml/ArchiveLockedPanel.qml",
+    "qml/ArchiveMediaStrip.qml",
+    "qml/ArchivePage.qml",
+    "qml/ArchiveTile.qml",
+    "qml/BatteryAlertWindow.qml",
+    "qml/BatteryBadge.qml",
+    "qml/BootLog.qml",
+    "qml/CalendarButton.qml",
+    "qml/CalendarConfirmBar.qml",
+    "qml/CalendarDayCell.qml",
+    "qml/CalendarEventPlate.qml",
+    "qml/CalendarFormat.js",
+    "qml/CalendarMonthPicker.qml",
+    "qml/CalendarPage.qml",
+    "qml/CalendarTextField.qml",
+    "qml/ClipboardCard.qml",
+    "qml/ClipboardConfirmBar.qml",
+    "qml/ClipboardGlyph.qml",
+    "qml/ClipboardPage.qml",
+    "qml/ClockInstrument.qml",
+    "qml/ColorWheel.qml",
+    "qml/DisplayExtras.qml",
+    "qml/DisplayPage.qml",
+    "qml/EventLogPage.qml",
+    "qml/FacilityBanner.qml",
+    "qml/FacilityTags.qml",
+    "qml/FileShelfPage.qml",
+    "qml/FocusModeButton.qml",
+    "qml/FocusModePage.qml",
+    "qml/GameProfileBadge.qml",
+    "qml/HardwareOverview.qml",
+    "qml/HazardStripes.qml",
+    "qml/HudGlyph.qml",
+    "qml/HudSettingsRow.qml",
+    "qml/HudSlider.qml",
+    "qml/HudSounds.qml",
+    "qml/Main.qml",
+    "qml/MapPage.qml",
+    "qml/MediaAssemblyPage.qml",
+    "qml/MediaPreview.qml",
+    "qml/MediaSourceMenu.qml",
+    "qml/MenuArt.qml",
+    "qml/MenuBadge.qml",
+    "qml/MenuCard.qml",
+    "qml/MenuClock.qml",
+    "qml/MenuGeometry.js",
+    "qml/MenuPlane.qml",
+    "qml/MenuScene.qml",
+    "qml/MenuTile.qml",
+    "qml/ModuleNumbering.js",
+    "qml/NoteCard.qml",
+    "qml/NoteFormatMenu.qml",
+    "qml/NotesAddButton.qml",
+    "qml/NotesFormatBar.qml",
+    "qml/NotesGlyph.qml",
+    "qml/NotesPage.qml",
+    "qml/NotesTaskCard.qml",
+    "qml/NotesWorkspace.qml",
+    "qml/NowPlayingButton.qml",
+    "qml/NowPlayingPage.qml",
+    "qml/NowPlayingSection.qml",
+    "qml/OrbiPomPage.qml",
+    "qml/ProfileCardSource.js",
+    "qml/ProfileField.qml",
+    "qml/ProfilePage.qml",
+    "qml/ProjectionPage.qml",
+    "qml/ProjectionTools.qml",
+    "qml/ProjectionWorkspace.qml",
+    "qml/QuickshellColorsPanel.qml",
+    "qml/QuickshellSettingsPage.qml",
+    "qml/QuickshellThemesPage.qml",
+    "qml/ReaderBookTile.qml",
+    "qml/ReaderGlyph.qml",
+    "qml/ReaderPage.qml",
+    "qml/ReaderPageSlider.qml",
+    "qml/ReaderTabs.qml",
+    "qml/Redaction.qml",
+    "qml/RedactionBlock.qml",
+    "qml/SettingsHeader.qml",
+    "qml/SettingsMenu.qml",
+    "qml/ShelfDocument.qml",
+    "qml/ShelfProperties.qml",
+    "qml/ShelfTile.qml",
+    "qml/SourceBottomButton.qml",
+    "qml/SourceGlyph.qml",
+    "qml/SourceSurface.qml",
+    "qml/StoragePage.qml",
+    "qml/SystemPage.qml",
+    "qml/TerminalPage.qml",
+    "qml/VolumeDropdown.qml",
+    "qml/VolumePage.qml",
+    "qml/VolumeRow.qml",
+    "qml/VolumeSlider.qml",
+    "qml/WallpaperBanner.qml",
+    "qml/WatchShell.qml",
+    "qml/WatchSurfaces.js",
+    "shaders/dial-composite.frag",
+    "shaders/dial-composite.vert",
+    "shaders/dial.frag",
+    "shaders/dial.vert",
+    "shaders/source-surface.frag",
+    "shaders/viewport-mask.frag",
+    "src/accountartwork.cpp",
+    "src/accountartwork.hpp",
+    "src/accountcontroller.cpp",
+    "src/accountcontroller.hpp",
+    "src/accountlogin.cpp",
+    "src/accountlogin.hpp",
+    "src/activitycollector.cpp",
+    "src/activitycollector.hpp",
+    "src/activitycontroller.cpp",
+    "src/activitycontroller.hpp",
+    "src/applicationcontroller.cpp",
+    "src/applicationcontroller.hpp",
+    "src/appshortcutscontroller.cpp",
+    "src/appshortcutscontroller.hpp",
+    "src/archivecontroller.cpp",
+    "src/archivecontroller.hpp",
+    "src/audiocontroller.cpp",
+    "src/audiocontroller.hpp",
+    "src/batterycontroller.cpp",
+    "src/batterycontroller.hpp",
+    "src/calendarcontroller.cpp",
+    "src/calendarcontroller.hpp",
+    "src/centerlogo.cpp",
+    "src/centerlogo.hpp",
+    "src/clipboardcontroller.cpp",
+    "src/clipboardcontroller.hpp",
+    "src/endfield/LICENSE",
+    "src/endfield/core/data/data_store.hpp",
+    "src/endfield/core/data/event_log_store.cpp",
+    "src/endfield/core/data/event_log_store.hpp",
+    "src/endfield/core/data/file_io.cpp",
+    "src/endfield/core/data/file_io.hpp",
+    "src/endfield/core/data/json.cpp",
+    "src/endfield/core/data/json.hpp",
+    "src/endfield/core/localization.hpp",
+    "src/endfield/core/scene.hpp",
+    "src/endfield/data_platform.cpp",
+    "src/endfield/modules/event_log.cpp",
+    "src/endfield/modules/event_log.hpp",
+    "src/endfield/modules/hypergryph_account_api.cpp",
+    "src/endfield/modules/hypergryph_account_api.hpp",
+    "src/endfield/modules/hypergryph_account_cache.cpp",
+    "src/endfield/modules/hypergryph_account_cache.hpp",
+    "src/endfield/modules/hypergryph_account_controller.cpp",
+    "src/endfield/modules/hypergryph_account_controller.hpp",
+    "src/endfield/modules/hypergryph_account_crypto.cpp",
+    "src/endfield/modules/hypergryph_account_crypto.hpp",
+    "src/endfield/modules/hypergryph_account_login.cpp",
+    "src/endfield/modules/hypergryph_account_login.hpp",
+    "src/endfield/modules/hypergryph_account_model.cpp",
+    "src/endfield/modules/hypergryph_account_model.hpp",
+    "src/endfield/modules/hypergryph_account_sanity_gauge.cpp",
+    "src/endfield/modules/hypergryph_account_sanity_gauge.hpp",
+    "src/endfield/modules/hypergryph_account_strings.cpp",
+    "src/endfield/modules/hypergryph_account_strings.hpp",
+    "src/endfield/modules/hypergryph_account_unicode.cpp",
+    "src/endfield/modules/hypergryph_account_unicode.hpp",
+    "src/endfield/modules/hypergryph_account_unicode.inc",
+    "src/endfield/modules/media_assembly_geometry.cpp",
+    "src/endfield/modules/media_assembly_geometry.hpp",
+    "src/endfield/modules/media_assembly_model.cpp",
+    "src/endfield/modules/media_assembly_model.hpp",
+    "src/endfield/modules/media_assembly_processor.cpp",
+    "src/endfield/modules/media_assembly_processor.hpp",
+    "src/endfield/modules/profile_artwork.cpp",
+    "src/endfield/modules/profile_artwork.hpp",
+    "src/eventlogcontroller.cpp",
+    "src/eventlogcontroller.hpp",
+    "src/eventlogtext.cpp",
+    "src/eventlogtext.hpp",
+    "src/facilitycontroller.cpp",
+    "src/facilitycontroller.hpp",
+    "src/fileshelfcontroller.cpp",
+    "src/fileshelfcontroller.hpp",
+    "src/focusmodecontroller.cpp",
+    "src/focusmodecontroller.hpp",
+    "src/hardwarecontroller.cpp",
+    "src/hardwarecontroller.hpp",
+    "src/localization_catalog.inc",
+    "src/localization_status.inc",
+    "src/main.cpp",
+    "src/mediaeditor.cpp",
+    "src/mediaeditor.hpp",
+    "src/mediaengine.cpp",
+    "src/mediaengine.hpp",
+    "src/mediainfo.cpp",
+    "src/mediainfo.hpp",
+    "src/notescontroller.cpp",
+    "src/notescontroller.hpp",
+    "src/nowplayingcontroller.cpp",
+    "src/nowplayingcontroller.hpp",
+    "src/orbipomcontroller.cpp",
+    "src/orbipomcontroller.hpp",
+    "src/profilecontroller.cpp",
+    "src/profilecontroller.hpp",
+    "src/profileimageitem.cpp",
+    "src/profileimageitem.hpp",
+    "src/projectioncanvas.cpp",
+    "src/projectioncanvas.hpp",
+    "src/quickshellbridgecontroller.cpp",
+    "src/quickshellbridgecontroller.hpp",
+    "src/readercontroller.cpp",
+    "src/readercontroller.hpp",
+    "src/richtext.hpp",
+    "src/settingscontroller.cpp",
+    "src/settingscontroller.hpp",
+    "src/sourcedial.cpp",
+    "src/sourcedial.hpp",
+    "src/splayerlyrics.cpp",
+    "src/splayerlyrics.hpp",
+    "src/storagecontroller.cpp",
+    "src/storagecontroller.hpp",
+    "src/terminalsession.cpp",
+    "src/terminalsession.hpp",
+    "src/terminalview.cpp",
+    "src/terminalview.hpp",
+    "src/wallpapercontroller.cpp",
+    "src/wallpapercontroller.hpp",
+    "src/watchanimationcontroller.cpp",
+    "src/watchanimationcontroller.hpp",
+    "src/worldmaprenderer.cpp",
+    "src/worldmaprenderer.hpp",
+    "tools/check-translations.mjs",
+    "tools/import-menu-art.mjs",
+    "tools/import-profile-card.mjs",
+    "tools/import-settings-assets.mjs",
+    "tools/import-watch-dial.mjs",
+    "tools/import-watch-surfaces.mjs"
+  ],
+  "assets": {
+    "assets/account/account-numerals.json": {
+      "sha256": "e645664e177f258995cdf027011ef3f7a6c9795dc19eca0a887c8d5843673c68",
+      "bytes": 54122
+    },
+    "assets/account/item-ap.rgba": {
+      "sha256": "7b86163904d67f26d924669548b003a6e65c6ec3fd4f32c3756ee0d6f43575ad",
+      "bytes": 25600
+    },
+    "assets/account/wallet-back.rgba": {
+      "sha256": "553164225aec76006254053f7cd24b7028628110a1b23e2795f42fc01eb91f7f",
+      "bytes": 12000
+    },
+    "assets/account/wallet-deco.rgba": {
+      "sha256": "0dd747088b0d383da189b1630b134a2665bdbb80b4e7154327babc1bbcbd512c",
+      "bytes": 12000
+    },
+    "assets/account/wallet-silhouette.rgba": {
+      "sha256": "d73ec9f8f56bfcbfdaea7ab041c3489b0289e51e2d962c4888b5eb619ddb35cc",
+      "bytes": 12000
+    },
+    "assets/app-shortcut/artwork.json": {
+      "sha256": "4a7d9844fcb4ea04ccce12d292aacd41a996294021f655600fceb4ae57f3933d",
+      "bytes": 6346
+    },
+    "assets/app-shortcut/presets/bolt.png": {
+      "sha256": "c462451d4f6bfad4317aff80bc44549c037d0d3ce8f7124caee0464b2415115f",
+      "bytes": 3639
+    },
+    "assets/app-shortcut/presets/brush.png": {
+      "sha256": "d3625aa641fe54fd09b540ac7ee1b452a2999177a91c76323345dddce3d1670e",
+      "bytes": 1541
+    },
+    "assets/app-shortcut/presets/camera.png": {
+      "sha256": "08fd11e24a329bd5715ee7678866f7d2d4311631a091af7d88b98232e128065a",
+      "bytes": 2101
+    },
+    "assets/app-shortcut/presets/code.png": {
+      "sha256": "acb53ad17c649f2cc9afbe7d9fa83b41b2204707459903b3b9c17e8db68300e3",
+      "bytes": 4458
+    },
+    "assets/app-shortcut/presets/folder.png": {
+      "sha256": "3a9b9415a871de25e9ffdba145eb3dbedc11ca7a12c21941c4ebacbac74f6e1d",
+      "bytes": 2222
+    },
+    "assets/app-shortcut/presets/game.png": {
+      "sha256": "916458f64fa1fca8585ab38904c480054ff2deeb8702208969fb197d5e2a2def",
+      "bytes": 5542
+    },
+    "assets/app-shortcut/presets/globe.png": {
+      "sha256": "7c6573b1c4ef668db91e5768ff0fac6b3baa9917934981608b8004e1b8e49d12",
+      "bytes": 5439
+    },
+    "assets/app-shortcut/presets/grid.png": {
+      "sha256": "d3d3ee9988dfdae386f579cca4363e34e061d0b91e7612ef7bcf832ff354d09f",
+      "bytes": 10303
+    },
+    "assets/app-shortcut/presets/music.png": {
+      "sha256": "5a52764071c39fdd87a25eac082eebd97ba16fdb3fceecdb2b8970debbe3ac99",
+      "bytes": 1565
+    },
+    "assets/app-shortcut/presets/original.png": {
+      "sha256": "a3ff73ca16c4ad429cc17b7692d670d53857dde2033f597569e4ac6a73be110b",
+      "bytes": 1088
+    },
+    "assets/app-shortcut/presets/play.png": {
+      "sha256": "4bef361cd88cc3f80fb47b174894bba38a01ec02f28ae650b819e6718e1c041b",
+      "bytes": 1701
+    },
+    "assets/app-shortcut/presets/star.png": {
+      "sha256": "16ecb7d53e472dff936486491376b8ca5a8f9d0187792d2cf6ae8ceefc66e1d7",
+      "bytes": 4332
+    },
+    "assets/app-shortcut/presets/terminal.png": {
+      "sha256": "fea42c4b2883e08cc3e7c3ab95af79b143d0bd9945c4ae989d72c33817da786a",
+      "bytes": 3590
+    },
+    "assets/app-shortcut/presets/textBubble.png": {
+      "sha256": "59a009fdf7a9231c5672113d52619653f3ee988d333a51a1ac0ee07f3dc96a72",
+      "bytes": 2351
+    },
+    "assets/audio/HyprField_Click.mp3": {
+      "sha256": "385945f9a0b9ffc9a3658398a76fb4f5f7531f0baa5c678e36ad538b9eb88963",
+      "bytes": 15054
+    },
+    "assets/audio/HyprField_Click.wav": {
+      "sha256": "dbb53d3521a30276daba585ba7a2cc39577c69d20e5b8fe80584151acf3f5382",
+      "bytes": 64590
+    },
+    "assets/audio/HyprField_Close.mp3": {
+      "sha256": "355e69723a06cc2459293c94251255da6888e45df02b68f44865454b52dfb123",
+      "bytes": 22357
+    },
+    "assets/audio/HyprField_Close.wav": {
+      "sha256": "dd4a2013af6b288580107e43d94971bc042e4b7a7476564af6d667c497b2b4ce",
+      "bytes": 152142
+    },
+    "assets/audio/HyprField_Open.mp3": {
+      "sha256": "7aab20a4c982756fb5149ddfcf3f87499ffaeead476f6b6d4a7649aab3829176",
+      "bytes": 23889
+    },
+    "assets/audio/HyprField_Open.wav": {
+      "sha256": "b1b9c359d9ac65823de4cf134cbef435fe6f7aba4af8f1b59626a7416f9180d8",
+      "bytes": 170574
+    },
+    "assets/audio/HyprField_Select.mp3": {
+      "sha256": "d0d0ab0842017004541523db67d23d66252aa45a399dde04684eeabedac4ff3b",
+      "bytes": 17363
+    },
+    "assets/audio/HyprField_Select.wav": {
+      "sha256": "4975045318d210a016594158849634a2d2aa08a5782b6312316b4920e6fdb5a3",
+      "bytes": 92238
+    },
+    "assets/fonts/HarmonyOS-Sans-LICENSE.txt": {
+      "sha256": "b2ffec0e6269ee41c3b5fc0345ab37600b46d66ebea6c9c58ff37f517bdfa164",
+      "bytes": 32768
+    },
+    "assets/fonts/HarmonyOS_Sans_Bold.ttf": {
+      "sha256": "7f973862c42353c9cc372dc2ae891d12c9ea5fe2a01b449adaf1eade9b469b47",
+      "bytes": 145860
+    },
+    "assets/fonts/HarmonyOS_Sans_Medium.ttf": {
+      "sha256": "f6b009d07d8d894d55eadeb7080b4916c3a2c83ff3ee60bbe851e6698d73bafd",
+      "bytes": 146164
+    },
+    "assets/fonts/HarmonyOS_Sans_Regular.ttf": {
+      "sha256": "4f00c7e80329238d0b6fc58e5c829c4086432ba9fa1a8c5ca3da9a0442ce0452",
+      "bytes": 146616
+    },
+    "assets/icons/SOURCES.json": {
+      "sha256": "a1bcc7ac6d57be0dec9c9ddb70ac3a82fd21abc107b9a8431fb6c28845af122f",
+      "bytes": 4193
+    },
+    "assets/icons/archive.png": {
+      "sha256": "8ba183750bb29366e36d2771f95c83d85cfee122c1c6f8f2c4afd779c3bd8042",
+      "bytes": 2070
+    },
+    "assets/icons/calendar.png": {
+      "sha256": "1e2051b240bbbf8999cbe3f653ac9b7a205eb456d749099126b01b80efbd918f",
+      "bytes": 1031
+    },
+    "assets/icons/clipboard.png": {
+      "sha256": "58ef767ea7a2473577ff93c6d550e0d1016755af5c508204b2148643d90e1a30",
+      "bytes": 1520
+    },
+    "assets/icons/event-log.png": {
+      "sha256": "c06c16f87430a991bb40aaa528fb0c901099e544970d972d6d987adffd1a746e",
+      "bytes": 1411
+    },
+    "assets/icons/file-shelf.png": {
+      "sha256": "c940345b90795467149c2474b178d669a522077cab37ebb1f1096b7941e8f1ed",
+      "bytes": 1021
+    },
+    "assets/icons/media-assembly.png": {
+      "sha256": "2c28ff5ad08cf03a3826d126eab7b6e6cbd6787e945a1c740735b7d552d08aa5",
+      "bytes": 1425
+    },
+    "assets/icons/minigame.png": {
+      "sha256": "4ad50a81cf4d53e58782e0a7ade791cd937bdec3dc6139cb9de1fa59f15ea664",
+      "bytes": 1261
+    },
+    "assets/icons/notes.png": {
+      "sha256": "b7262efd414bcdc0e5560acabe11cfdf4d30efe7892f00f3ae7105f7f7217b5d",
+      "bytes": 1304
+    },
+    "assets/icons/profile-frame.bgra": {
+      "sha256": "4af56ab7ed155e9475193ab04467c3f030cf6c573b117cb9f4ca03832a35e2c7",
+      "bytes": 262144
+    },
+    "assets/icons/projection.png": {
+      "sha256": "ba633da30577fa23338c458ecd4ed0fec3ce0f8c6cbd6314d2c2c6fb08d31364",
+      "bytes": 1761
+    },
+    "assets/icons/reader.png": {
+      "sha256": "90796faeac5dc2dd5fc8838b7ab5e0c4671ad9891575ed374e4771f08e4c8784",
+      "bytes": 1380
+    },
+    "assets/icons/work-mode.png": {
+      "sha256": "3d42ce345dacf3e15f2bd65fe8ecf43a90b9f6c0a43b68784477ecb1650d2b68",
+      "bytes": 726
+    },
+    "assets/media-assembly/filter-icons/filter_1.png": {
+      "sha256": "ef5f24d7403ace5bdc199c101e4867748324c751f7ce7b10e302bbf2071c703a",
+      "bytes": 27590
+    },
+    "assets/media-assembly/filter-icons/filter_2.png": {
+      "sha256": "ead92dd33bad246b23e24d53253f760687b6b1ca048ac79e8a1d86b2333afe82",
+      "bytes": 27281
+    },
+    "assets/media-assembly/filter-icons/filter_3.png": {
+      "sha256": "2e588bbba8b8c184d22345a19b115eb3d9bcacc16164844bf70cda80a08e5c6c",
+      "bytes": 26430
+    },
+    "assets/media-assembly/filter-icons/filter_4.png": {
+      "sha256": "456426ef5209a8a13c8bf2f0fc009bcb88bc7951c26379966d226372b3420157",
+      "bytes": 24703
+    },
+    "assets/media-assembly/filter-icons/filter_5.png": {
+      "sha256": "cdc813942422fb327c747129cfc64160ad7669ba115ce0a0f991ffa3f46c29c9",
+      "bytes": 21840
+    },
+    "assets/media-assembly/filter-icons/filter_6.png": {
+      "sha256": "9b73a41a6532a543bda808153f57e3bda8ebdd71783bf7a6a5941284a5bc21c2",
+      "bytes": 26953
+    },
+    "assets/media-assembly/filter-icons/filter_7.png": {
+      "sha256": "66fd4cc6a0c69e508cd6bf3cb0da50307ded155b000f929e7af5a71e556070df",
+      "bytes": 26456
+    },
+    "assets/media-assembly/filter-icons/filter_8.png": {
+      "sha256": "f600d1936a49ae3b09f657fbd2a8b0e590e1d33688251a8082e3582bb5734c84",
+      "bytes": 25130
+    },
+    "assets/media-assembly/filter-icons/sp_filter_1.png": {
+      "sha256": "66fd3321c7ae76f5cd1e610888c7dbe662a05f0e5f606340eaeee2906b372178",
+      "bytes": 25622
+    },
+    "assets/media-assembly/filter-icons/sp_filter_2.png": {
+      "sha256": "3d1d78f6fc24cef8f16aa822c245886c4513ade0e737974d814f80c0d9e21d4f",
+      "bytes": 27951
+    },
+    "assets/media-assembly/filter-icons/sp_filter_3.png": {
+      "sha256": "5b6d762c043ba103c8e686ba7e846c94cec0c7df3e209363589758319b419f35",
+      "bytes": 25157
+    },
+    "assets/media-assembly/filter-icons/sp_filter_4.png": {
+      "sha256": "09888d7a83dd71d1238ec8d44e6b06a39ae019336d920167f998bd7a51648cc1",
+      "bytes": 29711
+    },
+    "assets/media-assembly/filter-icons/sp_filter_5.png": {
+      "sha256": "5871302687e86a334d41e4edeeb42b5d931eaac790a03a369fd8f13ddea44d6a",
+      "bytes": 25415
+    },
+    "assets/media-assembly/filter-icons/sp_filter_6.png": {
+      "sha256": "5c0a1682fb9effcff94e60a49adf90cbcb2fe1c116509b34b96cb0d04d1fa0c0",
+      "bytes": 25566
+    },
+    "assets/media-assembly/filter-icons/sp_filter_7.png": {
+      "sha256": "834c354463724fdd4338351929b4c04b160faf404b54dd016503196167754721",
+      "bytes": 34555
+    },
+    "assets/media-assembly/luts/filter_1.rgb8": {
+      "sha256": "2a5f2382401e0d0eb9cee6af13877e0fce00b1e8de4f6586580e9df2faea5c06",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/filter_2.rgb8": {
+      "sha256": "5fe863860aa2117b0c8b092447e96e43dae9751b9ab91ea147979dc9202819c7",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/filter_3.rgb8": {
+      "sha256": "aaca36ab977227ef184b59e302137513ece4344bc9324dba370d44d37fe61410",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/filter_4.rgb8": {
+      "sha256": "65f94cf3d3bf0066c3a9ae6e4a8ff875a0fa4e7e97ed52cbfb3cde1782890d9f",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/filter_5.rgb8": {
+      "sha256": "b8d00e0d24d9da5d126aa7540aea9a0d2ebe3d9f61c34e43610ff95fb80379f3",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/filter_6.rgb8": {
+      "sha256": "50cfb542cf251407ea68f51ab92893e8a547b290db0c32a293908f8f7ec9cc29",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/filter_7.rgb8": {
+      "sha256": "d0ea7aa948b7a3daf43d5c1ad325a84b1b9389f433d1f8c3de323b8d6a1ac5ca",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/filter_8.rgb8": {
+      "sha256": "3de2ccfd7e4a9ac389c9078b8bf1d7f6086c2f027a5f8dc9501b33964cc94272",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/sp_filter_1.rgb8": {
+      "sha256": "b2ec08c9a7b42523f90e17678605a7b8fab664478ad084c5400b149355c30bf6",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/sp_filter_2.rgb8": {
+      "sha256": "692c57714133d3c3e684bdc2c2868f20a45a1d72d78c4af7803ec8557b641bdd",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/sp_filter_3.rgb8": {
+      "sha256": "cc6c514fe32aa8804270576ac3e2f5a1e1e71b6f76af208ff677f382ad5f2117",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/sp_filter_4.rgb8": {
+      "sha256": "b1d80896ed2aacc33b21210e715a995356669dac34025c8daf6a36c64ed0a0e4",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/sp_filter_5.rgb8": {
+      "sha256": "c504efdf317204162aeac170ccd4770abeb4a9df5937d89bc3ef50700aefbd4c",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/sp_filter_6.rgb8": {
+      "sha256": "ed3aece4e8c247565dee769993aa9905d465344aa8cae731d652a26172a03080",
+      "bytes": 98304
+    },
+    "assets/media-assembly/luts/sp_filter_7.rgb8": {
+      "sha256": "387f278a943fb3c23dbc09bf3b989cac6a27aa2ad9848990778e4097d71e1fab",
+      "bytes": 98304
+    },
+    "assets/media-assembly/provenance.json": {
+      "sha256": "cf2b3034d571ce4c8cec1bfd9f09c3ddbcbb1cfc87b695d72285838f396f23f1",
+      "bytes": 18201
+    },
+    "assets/media-assembly/stickers/sticker_1.png": {
+      "sha256": "330a22627216c0b4892bc019b6d8d6d2fd40423dd63098856a5f484b4857ed32",
+      "bytes": 44949
+    },
+    "assets/media-assembly/stickers/sticker_10.png": {
+      "sha256": "743bd85a22a3c4492de0d430fe3311acae900804a5f68743b45271472a1d6dd9",
+      "bytes": 68430
+    },
+    "assets/media-assembly/stickers/sticker_11.png": {
+      "sha256": "fd035b8a238212514102d731dc65a5fb9b80faa29d1c50a6229252ba09d43902",
+      "bytes": 55196
+    },
+    "assets/media-assembly/stickers/sticker_2.png": {
+      "sha256": "f476ebd9e483ddde4436cce9bbe15ea840775b0859fba2c9f46e9e49303c62ad",
+      "bytes": 9096
+    },
+    "assets/media-assembly/stickers/sticker_3.png": {
+      "sha256": "92bbc94b39e97074cc03d736d864b0f50916772d86d03849e10b07eac5a2cab2",
+      "bytes": 19048
+    },
+    "assets/media-assembly/stickers/sticker_4.png": {
+      "sha256": "3a7f435dbdad51c5da851bd0e18ef43d998bb17b91fc44756f97eb56c23a1e32",
+      "bytes": 25956
+    },
+    "assets/media-assembly/stickers/sticker_5.png": {
+      "sha256": "01a23406d60dfbe8abb153232cc252b58a49124a191db77392e058b982ece694",
+      "bytes": 35788
+    },
+    "assets/media-assembly/stickers/sticker_6.png": {
+      "sha256": "8ae36afa5d25a98da8f17022c7b6bc4e69598b210d6b6a824430c91b56705106",
+      "bytes": 22545
+    },
+    "assets/media-assembly/stickers/sticker_7.png": {
+      "sha256": "d1990a2d1ff1271faf139fbee843316febbde434cec9246afa3c8df3f3c31103",
+      "bytes": 37592
+    },
+    "assets/media-assembly/stickers/sticker_8.png": {
+      "sha256": "5ee0eac5ae5bfb5cad68e313f15a91577b2af807d10852d6b37f8869ae74bff9",
+      "bytes": 12126
+    },
+    "assets/media-assembly/stickers/sticker_9.png": {
+      "sha256": "02fc3e53d90200bee81b48e6bf897cceecdb7727bf27ad9959b1cf5458ba0379",
+      "bytes": 86470
+    },
+    "assets/media-assembly/stickers/sticker_activity_1.png": {
+      "sha256": "594723fd4e9c9a0bbc57cdf2c30e39a860df0602c87c484750035856b7e17e87",
+      "bytes": 42372
+    },
+    "assets/media-assembly/stickers/sticker_activity_2.png": {
+      "sha256": "9faec402d0139d80839badd8e7945c947331619a3b5fe93ae336ebebdba033f1",
+      "bytes": 39942
+    },
+    "assets/media-assembly/stickers/sticker_activity_3.png": {
+      "sha256": "c9ebe491d6bd792d422b41c885a8c3629a5026784e2f86ec96824119c7aa1733",
+      "bytes": 55793
+    },
+    "assets/media-assembly/stickers/sticker_activity_4.png": {
+      "sha256": "53111d40d5cf8251397425a492d434b05ac7e17bcead5469b64575f0d69a4a8b",
+      "bytes": 16068
+    },
+    "assets/media-assembly/stickers/sticker_activity_5.png": {
+      "sha256": "9c8bcf5d592e2a805316914d1ab81fc270c46d28946c2a32146b66b8a30d1a38",
+      "bytes": 201298
+    },
+    "assets/media-assembly/stickers/sticker_birthday_2026.png": {
+      "sha256": "ce8dc46477e353189bdd84448fb96549c1a5ffb03d4d7eed2f5e2bddc6710278",
+      "bytes": 90762
+    },
+    "assets/media-assembly/stickers/sticker_bp_1.png": {
+      "sha256": "839afb435eb8c9b596576ba043f18dcb9e712c5a1cce981ebbcb1e6012f95b4c",
+      "bytes": 11878
+    },
+    "assets/media-assembly/stickers/sticker_bp_2.png": {
+      "sha256": "579ec1e7d115743cdbc9ab8a7376666a15b9261162865b99948900562073f028",
+      "bytes": 16773
+    },
+    "assets/media-assembly/stickers/sticker_bp_3.png": {
+      "sha256": "e2777a4bcf7ff5d0e06177d3edb1506231157d88ad779cc596d33119da33c852",
+      "bytes": 24580
+    },
+    "assets/media-assembly/stickers/sticker_bp_4.png": {
+      "sha256": "83fa8e7ae4577d51f89ba9c86a56d5a4b3a856c0560aa1b5b3b1c4ceb1908b54",
+      "bytes": 18114
+    },
+    "assets/media-assembly/stickers/sticker_bp_5.png": {
+      "sha256": "42f520ee6b56d88c95493152077606f2638c06e17a8a0fc370d36d3eee5250ea",
+      "bytes": 28567
+    },
+    "assets/media-assembly/stickers/sticker_bp_6.png": {
+      "sha256": "194c74004afe234ebbda74fe273f850a6b0affef4ede49a7eef96b4feee53cd4",
+      "bytes": 81351
+    },
+    "assets/media-assembly/stickers/sticker_bp_7.png": {
+      "sha256": "a25f40731edf60ba165cf040795b7bce0e917bcbd2c9456aee4c48c4f55682ae",
+      "bytes": 92165
+    },
+    "assets/media-assembly/stickers/sticker_channel_v1d3d6_1.png": {
+      "sha256": "563f86cfeea08f43e307af2253f79033b5c0b9731fc907d6a6e7a6416e604b25",
+      "bytes": 38079
+    },
+    "assets/media-assembly/stickers/sticker_channel_v1d6_1.png": {
+      "sha256": "8bd8a891c35e555dbab3525b4adefaef568bca63c75f8fdfd2589df1209ada2c",
+      "bytes": 22343
+    },
+    "assets/media-assembly/stickers/sticker_giftpack_1.png": {
+      "sha256": "b91be9142e481a92f1f13ff218310a3e0bb38dea4451d3da0cbf071eb7db9e18",
+      "bytes": 119458
+    },
+    "assets/media-assembly/stickers/sticker_giftpack_3.png": {
+      "sha256": "66e3134acbf497ae6f10d33ea6141fcdd2957bc21f9755aa22e7f3f07539a96e",
+      "bytes": 68400
+    },
+    "assets/media-assembly/stickers/sticker_giftpack_4.png": {
+      "sha256": "c166d9b8a8cbf428801ac63530c2c78ec83add3e9c0a7acc8fbb041754b38763",
+      "bytes": 84491
+    },
+    "assets/media-assembly/stickers/sticker_giftpack_5.png": {
+      "sha256": "112975b876522f8739d13d0e7a620b356b821cc8260113c8f2cc010082e657bf",
+      "bytes": 107873
+    },
+    "assets/menu/amber-ring.svg": {
+      "sha256": "3a973256edb0dd718ade2bf12caf529c97b3b1670c995fe1695340ed93bf5ad4",
+      "bytes": 668
+    },
+    "assets/menu/badge.png": {
+      "sha256": "0431cea9513f5bfee70fc8cf68df44cf5b1e1954c40c7313d3bd1e7d4c6549b5",
+      "bytes": 167998
+    },
+    "assets/menu/badge.svg": {
+      "sha256": "dfcd98ae8fc20079de90813a2d731eee38487bc74a4432684836ff46aff43e1c",
+      "bytes": 5090
+    },
+    "assets/menu/bottom-0-back.svg": {
+      "sha256": "4364e9bcb0109d6df323d27ae8a71340b9bdb9b347a3c637e3f73fcc9b768b8b",
+      "bytes": 669
+    },
+    "assets/menu/bottom-0-decal.svg": {
+      "sha256": "79906ac345226905203adc8113d4b5e27804cb717ff935c4bc3e5b4de24804ca",
+      "bytes": 286
+    },
+    "assets/menu/bottom-0-face.png": {
+      "sha256": "01457ca910d9d4c9a12846e701dd858ce6d58df2def359b00721d873dd647bb5",
+      "bytes": 180788
+    },
+    "assets/menu/bottom-0-face.svg": {
+      "sha256": "8f1e2bcb04259156983d92913812d03b886761a28ed3fa06935a03294e76f76c",
+      "bytes": 8688
+    },
+    "assets/menu/bottom-0-icon.svg": {
+      "sha256": "b82b7b1053ddc8ae513b8fa688be223cba88c03e6bdeb9529df92e9ad75c4eaa",
+      "bytes": 902
+    },
+    "assets/menu/bottom-1-back.svg": {
+      "sha256": "e2a64a54836230cd7ad6dd4a67a73d224083af6781325e1527ea8f8b43840b86",
+      "bytes": 681
+    },
+    "assets/menu/bottom-1-decal.svg": {
+      "sha256": "f8813feba51800da65719c576f4a416d2a32b97d592df6a81d05b2311e912a09",
+      "bytes": 1331
+    },
+    "assets/menu/bottom-1-face.png": {
+      "sha256": "ccd654332c2f45759f12f8c526196d4afec1e99dd861006288f9c2920c95c96f",
+      "bytes": 167417
+    },
+    "assets/menu/bottom-1-face.svg": {
+      "sha256": "7b7811c20bf4e035ff442886c9aac61f9fd6f5b23af58f9068841491f0c8e893",
+      "bytes": 8721
+    },
+    "assets/menu/bottom-1-icon.svg": {
+      "sha256": "24ddc3776de5fb60e383132920769494e8b72ca1f95406beea558a74402afca0",
+      "bytes": 908
+    },
+    "assets/menu/card-0-back.svg": {
+      "sha256": "25392f1b96651f18f8bcfe3436efc50a475e513fb97b7b86b37026675da15e00",
+      "bytes": 655
+    },
+    "assets/menu/card-0-face.png": {
+      "sha256": "9cae63bec84bae5bab4c0d1fc3e4794acc8a2f4a916024df564dd9be00fe6ae6",
+      "bytes": 290480
+    },
+    "assets/menu/card-0-face.svg": {
+      "sha256": "0fb0f2291a95b76ef090e2c64b5be12ff83b28e415668dab465341517fe02ca5",
+      "bytes": 21618
+    },
+    "assets/menu/card-0-hover.svg": {
+      "sha256": "f87546fe24d78fe89484d4f26cf0cd82916d9238331dd01d12f258e64594d03b",
+      "bytes": 377
+    },
+    "assets/menu/card-0-links.svg": {
+      "sha256": "9fc4c5e1d1c45c13a6d8947708d9794cb9fb370e152d977db460795f20ae9350",
+      "bytes": 2593
+    },
+    "assets/menu/card-1-back.svg": {
+      "sha256": "8519ee29a9c1cf322889bdea42d25c4d3c2e6d1ac7850a227d2bdf70c74bf718",
+      "bytes": 654
+    },
+    "assets/menu/card-1-face.png": {
+      "sha256": "a92faa93062f3257165799d14ad346f5080aed4a51cc0a713c63f71be122736b",
+      "bytes": 221315
+    },
+    "assets/menu/card-1-face.svg": {
+      "sha256": "72b97aa45480db3210721309ebc3d3eb829c51f1709b7a7096f009de072ed09e",
+      "bytes": 13998
+    },
+    "assets/menu/card-1-hover.svg": {
+      "sha256": "c456065fd302f78ea320c0683a4a5590724f1fbc309a9dfbb9123dbb229c1151",
+      "bytes": 377
+    },
+    "assets/menu/card-1-links.svg": {
+      "sha256": "5c4ef4642d0fe31645058664e675c5ff40ff793408e3c3a44e72f121a4be6b4a",
+      "bytes": 2593
+    },
+    "assets/menu/card-2-back.svg": {
+      "sha256": "3f4c33ee3d4bc51bb14617bbdda06f4e1a3ce1a2bb1eb7287100c6d4396cb91c",
+      "bytes": 654
+    },
+    "assets/menu/card-2-face.png": {
+      "sha256": "9baf67bd5165970fe4f1851fd7ce02054fd6323b3f51ca9a281c4bca2aae75aa",
+      "bytes": 85697
+    },
+    "assets/menu/card-2-face.svg": {
+      "sha256": "68ac4d379b580d77c0254936b76ec9208f78c4d522527a5d911bf7d0d9444f71",
+      "bytes": 1916
+    },
+    "assets/menu/card-2-hover.svg": {
+      "sha256": "22abae0847c8be7c57715940c47288fdbb88dece69f699c46820594b1e66504f",
+      "bytes": 377
+    },
+    "assets/menu/card-2-links.svg": {
+      "sha256": "f9b5b10c7966bb6f31477c9c562669f2c555d5f3591b6815255ebf908d97f1d8",
+      "bytes": 2593
+    },
+    "assets/menu/card-3-back.svg": {
+      "sha256": "a8ea7fc439accb09c41ba1b5ad57b6bde3dc8de751f469b4e2b6c2c5591adccf",
+      "bytes": 661
+    },
+    "assets/menu/card-3-face.png": {
+      "sha256": "567b050d6ac36ca1c889ef0b6adf7569d7e1ae192d3b4bf8a53c5260d8f4cbae",
+      "bytes": 79072
+    },
+    "assets/menu/card-3-face.svg": {
+      "sha256": "306bc73902aab90597158af14e279cdb659b66bf341aac267522802b50cbec8e",
+      "bytes": 1925
+    },
+    "assets/menu/card-3-hover.svg": {
+      "sha256": "9eda653d1c29b98ebfc0812d2eabbe335380088bad0450d5c6dac158cf3b77f5",
+      "bytes": 379
+    },
+    "assets/menu/card-3-links.svg": {
+      "sha256": "75b1e4a606507747539811806df6b17744b348f3285a1efaaaeb5970b622da2b",
+      "bytes": 2593
+    },
+    "assets/menu/flag.svg": {
+      "sha256": "b91520564c959183047098f00c0d9b5c4a70d2b06de35e5b6d5964a69f118e8a",
+      "bytes": 260
+    },
+    "assets/menu/floor.svg": {
+      "sha256": "7a2a7665ccca5e282dee941397d23f6356350902826de6a0d7191df9c4c93ec0",
+      "bytes": 654
+    },
+    "assets/menu/grooves.svg": {
+      "sha256": "099f030b7d7062a9d05d8237d8b49a5a46084205e2344f7b3ea1d59e060c1126",
+      "bytes": 654
+    },
+    "assets/menu/power-plate.png": {
+      "sha256": "0a984f02458ec931ecd614679d81f0200113571f4809d2d7ad5b34a33f2973a8",
+      "bytes": 21760
+    },
+    "assets/menu/power-plate.svg": {
+      "sha256": "a0b39496874c644907263ca032c1e484be6c19b0eef02c98a65eabdd53b70e04",
+      "bytes": 896
+    },
+    "assets/menu/rim-band.svg": {
+      "sha256": "1162c9df84e99f813375b83017d37973377ffc6e807db1b44941e99c40a3ab56",
+      "bytes": 305
+    },
+    "assets/menu/tile-face.png": {
+      "sha256": "29f2f3bf5c742860130838f3d8661248c154bf892afc6cb5d5237b6ec25fb11e",
+      "bytes": 37412
+    },
+    "assets/menu/tile-face.svg": {
+      "sha256": "7c1efaaf8dcf122459de16ced2583c17b5440325a2a0b7f2128daedd624b3626",
+      "bytes": 2101
+    },
+    "assets/menu/well.png": {
+      "sha256": "ae92abf82254c137b0b82a6d5b61e3a8c6582a753eeb54a08adc1246628b860a",
+      "bytes": 488363
+    },
+    "assets/menu/well.svg": {
+      "sha256": "c19c51943d489324496fe2b90ff51fe6c587723e222c47cbd5619115dedccdb2",
+      "bytes": 13681
+    },
+    "assets/menu/white-arcs.svg": {
+      "sha256": "b02a1ea4b72870bae97a6b797b3305e56216e70877353c5196fe36a7cde090e3",
+      "bytes": 1208
+    },
+    "assets/orbipom/Matter-LICENSE.txt": {
+      "sha256": "ed182087be5b26734aa6d4789743de3a97417950e8c1e3ff2e3d19c6462720d3",
+      "bytes": 1092
+    },
+    "assets/orbipom/level-1.png": {
+      "sha256": "c6e40bf723a0ff63e247616ff608128b9926320a33004d133351c81792afe099",
+      "bytes": 14592
+    },
+    "assets/orbipom/level-10.png": {
+      "sha256": "b7f56f809f2e2df18648fbe69b26b674ae707b66716bd5949e9c1b42960cae17",
+      "bytes": 38929
+    },
+    "assets/orbipom/level-11.png": {
+      "sha256": "3f44a0dad2c7318f5d90c28493434fab7f7b58e558c8fe9026fe9c0aa0e39db4",
+      "bytes": 61057
+    },
+    "assets/orbipom/level-2.png": {
+      "sha256": "c427f5d98af01154b8502711ab12a2ea850bd54cd75bad174bab835a4c660181",
+      "bytes": 17418
+    },
+    "assets/orbipom/level-3.png": {
+      "sha256": "54682200e3325aa8bcddb1cd8fca3e95375c990d4c05a8012aaceb919981006f",
+      "bytes": 23919
+    },
+    "assets/orbipom/level-4.png": {
+      "sha256": "5cb064a3cecdda942700b3f7c433840fc8e7c38cfd463999a5821e158e9b50e0",
+      "bytes": 24665
+    },
+    "assets/orbipom/level-5.png": {
+      "sha256": "75de0721acd15569123808db245849d46802fc899b1c7af1c24b596ac2531677",
+      "bytes": 30058
+    },
+    "assets/orbipom/level-6.png": {
+      "sha256": "b32c6540d485ddf6627233c88be2baa0f5fa40be1f020dc014c0eb0833d7443f",
+      "bytes": 25926
+    },
+    "assets/orbipom/level-7.png": {
+      "sha256": "b865cdf42d87da05e8a211d03d93c63bb525dc47c3a2cc5defb680e5335283c2",
+      "bytes": 25342
+    },
+    "assets/orbipom/level-8.png": {
+      "sha256": "2192bee10c754ecb9b17391336aa8b28e0cd9dc75076ac362dce572e2b7937b6",
+      "bytes": 29537
+    },
+    "assets/orbipom/level-9.png": {
+      "sha256": "06571247101c34956052dee0215d1598b34865dc1996d914950d0f03fbef887f",
+      "bytes": 41943
+    },
+    "assets/orbipom/matter-0.20.0.js": {
+      "sha256": "928d059868201b2c4c270818fda44e5d26c099e4df407043f018f9bbe2c598cf",
+      "bytes": 83318
+    },
+    "assets/orbipom/orbipom.js": {
+      "sha256": "1c68da4d2165f3d6d45e8842ab4d7d6e766bb3d738e3ff19f32ca2dce64e4054",
+      "bytes": 94724
+    },
+    "assets/orbipom/provenance.json": {
+      "sha256": "d470fdefef7a2868eaa1831757eb5cf61760b67a337f8b4586e00621a84b56e7",
+      "bytes": 17913
+    },
+    "assets/orbipom/skill-clear.png": {
+      "sha256": "eced5a3bbfbe94e2a819ce4e2ce95d1fd3ad4e928dba8bd69cd589389fb24474",
+      "bytes": 7494
+    },
+    "assets/orbipom/skill-shake.png": {
+      "sha256": "1a20d4ec832c78946615d916454e35ca89a58dd5f838f54613d16b8d24589c5b",
+      "bytes": 8004
+    },
+    "assets/orbipom/skill-swap.png": {
+      "sha256": "741a23bb6f0716ef33eacf22ddcb32c5f775589c8cd1012a7571c2a3fbcb6985",
+      "bytes": 6098
+    },
+    "assets/orbipom/skill-wind.png": {
+      "sha256": "23321a1657ab729b813af7b469fe554f71cc44628dfbe3610b3296e1bc569196",
+      "bytes": 8268
+    },
+    "assets/profile-card/bg_common_r26.png": {
+      "sha256": "998e0997fdcbd96b859f70e93e78d76517f618ac1c013dcda66689f6dee49b4a",
+      "bytes": 975
+    },
+    "assets/profile-card/bg_play_slider_new.png": {
+      "sha256": "d27c065856a61f5d2312c6d5bd336f45b5c2d80fdfdc878e2594b2539792d308",
+      "bytes": 621
+    },
+    "assets/profile-card/business-card.bgra": {
+      "sha256": "3991ce4ab7eed27bb724a6c930f8a24faed2bc6d2c79bd372ede4372b464e2d3",
+      "bytes": 434112
+    },
+    "assets/profile-card/business_card_topic_normal_1.png": {
+      "sha256": "f936dc80f7d2b3577dbca4ff88fcf29cf30191b43c0e4f8aa01fe241be848f61",
+      "bytes": 79392
+    },
+    "assets/profile-card/common_head_shadow_bg.png": {
+      "sha256": "407896e9773310753b42747ec5fba9740b7598b4d6ad4d267b585313399faf9b",
+      "bytes": 2854
+    },
+    "assets/profile-card/common_whiteline_img.png": {
+      "sha256": "0b64a03e76fe63d7fa0d2ab41d1f3249534175cbdfbeae5451679e0e618dbbf2",
+      "bytes": 353
+    },
+    "assets/profile-card/deco_adventure_halo_arrow.png": {
+      "sha256": "57f17b513b288757393be14baed3dc58cb293cac609f160b408cd7f68dcf2344",
+      "bytes": 500
+    },
+    "assets/profile-card/deco_friend_card_head_01.png": {
+      "sha256": "ce3d3c0649b442c77394632c607d8992fb21dfc95684cf3dba42ab10d4acb71b",
+      "bytes": 719
+    },
+    "assets/profile-card/deco_friend_card_head_02.png": {
+      "sha256": "1ba2be25d4f5d8445813251a4b9eeca2e4b7f7b764b6ef9d51a20783ebca9fca",
+      "bytes": 3997
+    },
+    "assets/profile-card/deco_play_head.png": {
+      "sha256": "ab5a86f3c89d2f4014f3833cb9c1111caf084497d55222a85a86fce5245b379b",
+      "bytes": 559
+    },
+    "assets/profile-card/deco_play_name_01.png": {
+      "sha256": "660bb9ea58f1581ed908a7984d0da69db32155be12b23846e69d2ed3d2a9e6e8",
+      "bytes": 656
+    },
+    "assets/profile-card/deco_play_right.png": {
+      "sha256": "bafc3bef0edea0ff679a908290bdc2b38d16a95005f49cae3c57a96ce0c3aac8",
+      "bytes": 3793
+    },
+    "assets/profile-card/deco_play_right_shadow.png": {
+      "sha256": "75629fca33afc1d7502971d4f09843814cea5ecb981fa96cff72eb790b58a916",
+      "bytes": 5836
+    },
+    "assets/profile-card/icon_chr_0011_seraph.png": {
+      "sha256": "ef13dc2978728c1e30166ab8e0363ebc1ef5b6bb3b3cfa7628f2166a34ea387d",
+      "bytes": 95758
+    },
+    "assets/profile-card/icon_friend_cell_char_block.png": {
+      "sha256": "22bf0ab612acbc41ac1e39b9b338a29a1abe70d56390a2097cc8f93955af3e9b",
+      "bytes": 1210
+    },
+    "assets/profile-card/icon_right.png": {
+      "sha256": "e8e3cb20c4186e2292b0269fb5d731365c25c8fd2eb0f670ecef796f585f632d",
+      "bytes": 919
+    },
+    "assets/profile-card/icon_user_avatar_frame_endfield_1.png": {
+      "sha256": "dcdc001e2bd894339e1605d34e879ffbb7069ea852c088690808b1e5b95e31ad",
+      "bytes": 15286
+    },
+    "assets/profile-card/scene.json": {
+      "sha256": "8415e4e2fb67f28bc06e48c6c41d722eabe5ed858f7976c6321c200e3ec227aa",
+      "bytes": 45876
+    },
+    "assets/settings/EndfieldHUD-LICENSE": {
+      "sha256": "3fcf3e5255fe88c37ad7eb6bc55efb14c82b89eb1257cffd295d320f3da4999e",
+      "bytes": 1065
+    },
+    "assets/settings/application-icons/alphaFour-app.png": {
+      "sha256": "10c85ddeae9265da14558dd3d01dec76df8663d1fbb723909b09dabb1f2f30b6",
+      "bytes": 2896
+    },
+    "assets/settings/application-icons/alphaFour-tray.png": {
+      "sha256": "2bfaf75637a05dd940087e4a8ce161155f6bac3a236065bbd95686bfafe3f302",
+      "bytes": 960
+    },
+    "assets/settings/application-icons/alphaSix-app.png": {
+      "sha256": "4783f2725ce64f60dcece1545d9dd2d216e943013a1a824a223970cd561b1796",
+      "bytes": 3011
+    },
+    "assets/settings/application-icons/alphaSix-tray.png": {
+      "sha256": "11bb0255bed6032161e051d8aca8058925128d1f81ec3779744751ee981b439a",
+      "bytes": 1006
+    },
+    "assets/settings/application-icons/ambienceSynesthesia-app.png": {
+      "sha256": "dcacd256299bb7c9395e61e3d4fae41c97644e0abdb837a9b9a6e05c1e792305",
+      "bytes": 3948
+    },
+    "assets/settings/application-icons/ambienceSynesthesia-tray.png": {
+      "sha256": "715262b9eabae09d72727d1886f970174c34b96679280626023d1d21dede7e31",
+      "bytes": 1298
+    },
+    "assets/settings/application-icons/babel-app.png": {
+      "sha256": "6ee7b57cf192863b42c6542baf12408e17d544a0bfb3d8d465f7b357eac2153d",
+      "bytes": 3639
+    },
+    "assets/settings/application-icons/babel-tray.png": {
+      "sha256": "4172e07d71e5217e50c32c2d4136422307d730e29f48d7bfa8ff74c0bb3061a4",
+      "bytes": 1142
+    },
+    "assets/settings/application-icons/battery-app.png": {
+      "sha256": "7edcf0c5878ed1d764b4f7c2c746856855fbde80566100865008de23696070de",
+      "bytes": 12739
+    },
+    "assets/settings/application-icons/battery-tray.png": {
+      "sha256": "13c0d8b875736316f49088dbeb74717d241c57e24dd673ae7f161dd536ba6df8",
+      "bytes": 4094
+    },
+    "assets/settings/application-icons/blacksteel-app.png": {
+      "sha256": "58858c7556a2a8d72dee6704f1b28abcb7aa27933e307cb6b8691f810c2c14e4",
+      "bytes": 2483
+    },
+    "assets/settings/application-icons/blacksteel-tray.png": {
+      "sha256": "fadb0b2331025ab392f05b0e877aa05d256ba897fda2364033a0ed251ce2d5bd",
+      "bytes": 925
+    },
+    "assets/settings/application-icons/cambrian-app.png": {
+      "sha256": "af0f96f1b87dd0f5c2751de9efa268d0d50b30b94a87281e9400d6cf5d947788",
+      "bytes": 4020
+    },
+    "assets/settings/application-icons/cambrian-tray.png": {
+      "sha256": "60a1da460e9d8a69bcbe4a6784299808738f574c4397f50008f5005136c01321",
+      "bytes": 1287
+    },
+    "assets/settings/application-icons/ccBarrenland-app.png": {
+      "sha256": "fb0646042847381552852d8a6cef980396329bcf9b1d033670b07c1355c0f1eb",
+      "bytes": 4334
+    },
+    "assets/settings/application-icons/ccBarrenland-tray.png": {
+      "sha256": "b6f6e0d1eb51268e5e7663b9e80fb1308b7bba3ec958da825689adddbab3b1b4",
+      "bytes": 1396
+    },
+    "assets/settings/application-icons/ccCinder-app.png": {
+      "sha256": "edfbc104618059aee6117ccb6911c96363399c649b168c91ec60aa413b661dcd",
+      "bytes": 4511
+    },
+    "assets/settings/application-icons/ccCinder-tray.png": {
+      "sha256": "250514a7297407accbcf5dbcc40e7958cb1140adc0ab1e913d38d3be1b1d8375",
+      "bytes": 1522
+    },
+    "assets/settings/application-icons/ccLeadSeal-app.png": {
+      "sha256": "4f8f67a4e02f90d2adf4b5f7d1fdfe07f8e273774c582bdde4b1aaa4711bd27c",
+      "bytes": 3900
+    },
+    "assets/settings/application-icons/ccLeadSeal-tray.png": {
+      "sha256": "680d11830aa1721581287b14960d8bf642a099999cd9a9c0d97a94108eecb94a",
+      "bytes": 1297
+    },
+    "assets/settings/application-icons/ccPineSoot-app.png": {
+      "sha256": "54b486913f506c7ca554fc7a5ac0f23c99f38ade0fc6a9391152d6b62fa83552",
+      "bytes": 4199
+    },
+    "assets/settings/application-icons/ccPineSoot-tray.png": {
+      "sha256": "fc35f09b48703afef26b0be122dcae20da9768b215ab3603ca6ec03f9b9abfcf",
+      "bytes": 1385
+    },
+    "assets/settings/application-icons/ccPyrite-app.png": {
+      "sha256": "82d9d945f7c2016f795faf612536e7a1523312a44314a39cfa9291f978f84a4a",
+      "bytes": 3706
+    },
+    "assets/settings/application-icons/ccPyrite-tray.png": {
+      "sha256": "072efe6355d9158391f022f8861ff05e7934bf272d3857353f8e284aa006801c",
+      "bytes": 1223
+    },
+    "assets/settings/application-icons/ccSpectrum-app.png": {
+      "sha256": "e377445850dac71130486521c1ef9e4ea8858cb54aee6f65ef76af0399fb5e54",
+      "bytes": 4329
+    },
+    "assets/settings/application-icons/ccSpectrum-tray.png": {
+      "sha256": "1d5effb691472caaa0e196e73840f9a8a89692051c32eaa2b66a69590965e482",
+      "bytes": 1365
+    },
+    "assets/settings/application-icons/contingencyContract-app.png": {
+      "sha256": "8d04c8f23cceeb92831e55e674a19e6372475dd6ad45487ff905fcc4bba8f49b",
+      "bytes": 3791
+    },
+    "assets/settings/application-icons/contingencyContract-tray.png": {
+      "sha256": "be66ffd0573949bca2ff80ee70c266704de1aa91b481ea7685c653ee1f253c4c",
+      "bytes": 1220
+    },
+    "assets/settings/application-icons/coralCoast-app.png": {
+      "sha256": "c721a5a4a7c99b157d6f820d92a0d8e7237d0b383b5869cdfce4b2a13edfaee5",
+      "bytes": 4348
+    },
+    "assets/settings/application-icons/coralCoast-tray.png": {
+      "sha256": "c00f8ca1c56bfb4ddb3885be4cbd6f8dd5b996d67fe8aa6122ab1533db901b1f",
+      "bytes": 1329
+    },
+    "assets/settings/application-icons/ddd-app.png": {
+      "sha256": "a630b3f33142d8cf2a5afcd843f0ab94cd25746a105fdf07f6de8aaab2322aa4",
+      "bytes": 2764
+    },
+    "assets/settings/application-icons/ddd-tray.png": {
+      "sha256": "08e20e7f3f0a2dead0dd2e4ce1388565f26a815761032f9919914c76f2cd671c",
+      "bytes": 968
+    },
+    "assets/settings/application-icons/dossoles-app.png": {
+      "sha256": "ab0f6de399e2e57d8cd415e1be85fa859d1f028a1a0d5600be1511a495a3a43a",
+      "bytes": 4631
+    },
+    "assets/settings/application-icons/dossoles-tray.png": {
+      "sha256": "e0b8fc2c5fb2e5dab9afda813fcd8a4774089e8335a80b4a348689cf1b1b9269",
+      "bytes": 1596
+    },
+    "assets/settings/application-icons/eliteOps-app.png": {
+      "sha256": "2d45d0be60d5ceee3c03c1222b16801dbfa16d872e263dc0d555324d5862c048",
+      "bytes": 4513
+    },
+    "assets/settings/application-icons/eliteOps-tray.png": {
+      "sha256": "acbf0caf7c7c94be9829b4723217548cb4300917647ebe091052ce79ba651351",
+      "bytes": 1546
+    },
+    "assets/settings/application-icons/endfield-app.png": {
+      "sha256": "fa50aabd01850c5602550b5fd838a9f65ffb759f4378de44bee4301a41bc5bf5",
+      "bytes": 3974
+    },
+    "assets/settings/application-icons/endfield-tray.png": {
+      "sha256": "62e0dfe2ca74846895027a636f61b8ceba647dd5183598dff7c27e90ef3e07db",
+      "bytes": 1632
+    },
+    "assets/settings/application-icons/gameAIC-app.png": {
+      "sha256": "56cca05949bdc817fb5baf4ddc9b93b5a0640ab0859c9c5b0a1ec09309473e94",
+      "bytes": 3020
+    },
+    "assets/settings/application-icons/gameAIC-tray.png": {
+      "sha256": "faacca9871ec98ce5d7f231108d94448cbf962f2095edd6b58701491caf5bd4a",
+      "bytes": 1135
+    },
+    "assets/settings/application-icons/gameArchive-app.png": {
+      "sha256": "2c4a997d8c4c56850f00b749a7b5a9b6490d39ee8cb60bc3aedd26db6027efeb",
+      "bytes": 2846
+    },
+    "assets/settings/application-icons/gameArchive-tray.png": {
+      "sha256": "fb5a8ec732687b0e99d9c756d6eff2c340d5059f35596c15e8e0c73aa093b03e",
+      "bytes": 980
+    },
+    "assets/settings/application-icons/gameBaker-app.png": {
+      "sha256": "2276c446990106d5d79669aed3910ffb395d7433cc1296be7bd30bd65a2eb055",
+      "bytes": 2002
+    },
+    "assets/settings/application-icons/gameBaker-tray.png": {
+      "sha256": "0d17d61a3ebbc232181b64b8e62e979d678589d5d88b1a2c3f642af4a76ab6f2",
+      "bytes": 787
+    },
+    "assets/settings/application-icons/gameCredits-app.png": {
+      "sha256": "03e497694989cfe9e02bc549e9f539a8ab9d1f3249bed1f37d04a3e720db50d5",
+      "bytes": 3932
+    },
+    "assets/settings/application-icons/gameCredits-tray.png": {
+      "sha256": "ffac4da927475ae35efab0612716ea0ec315df332d0e896df796e6ea4e958890",
+      "bytes": 1558
+    },
+    "assets/settings/application-icons/gameDepot-app.png": {
+      "sha256": "39755f8a9e162e0bd968954b6ec897cabe16d633029ba0fe82f21354c467da76",
+      "bytes": 2066
+    },
+    "assets/settings/application-icons/gameDepot-tray.png": {
+      "sha256": "b4cac4e3870f1c52bb0c33b362e7ecb61fbd5dca21dd7fb483743021aa0d5556",
+      "bytes": 857
+    },
+    "assets/settings/application-icons/gameDijiang-app.png": {
+      "sha256": "e7698edfd0dc078d1f3ca471424063e4b726d1ed7e7a8a73a8528f02bfb3e42d",
+      "bytes": 3182
+    },
+    "assets/settings/application-icons/gameDijiang-tray.png": {
+      "sha256": "ec7d8cca9feb242360d57000f6a115c363d0282d89e95712590f98fcfcdbb7ab",
+      "bytes": 1413
+    },
+    "assets/settings/application-icons/gameEnvironmentMonitoring-app.png": {
+      "sha256": "0f2b5cd240e3da9f5f7fa548eec36bed6d17fb866819ceff3219e33ed09e0ff7",
+      "bytes": 2878
+    },
+    "assets/settings/application-icons/gameEnvironmentMonitoring-tray.png": {
+      "sha256": "5a7707bc9383c4319f99f44f9246df864fbe2403c691dad4b56163d3534574df",
+      "bytes": 907
+    },
+    "assets/settings/application-icons/gameExclamationMark-app.png": {
+      "sha256": "16347706090de489f2520cf37a6612c8bbed9fbc4097ac25c517c529dfe4a468",
+      "bytes": 2575
+    },
+    "assets/settings/application-icons/gameExclamationMark-tray.png": {
+      "sha256": "9bc0d8db7e45be566a551e87ce961e7a3d7e1c861301ffdefcfcf56404023427",
+      "bytes": 869
+    },
+    "assets/settings/application-icons/gameFactory-app.png": {
+      "sha256": "0185b814f6ec1278d6031041b79a0166b6c4416dd5a651146a65ab8efb9024e5",
+      "bytes": 2482
+    },
+    "assets/settings/application-icons/gameFactory-tray.png": {
+      "sha256": "58c63f5d033e77e43a3634ff955d64ab7d197012a568edddaab73befdc692587",
+      "bytes": 977
+    },
+    "assets/settings/application-icons/gameGear-app.png": {
+      "sha256": "a93fd52cad0589bff5d190fbb02228df24984648215a79391ba1cbea2b0dd786",
+      "bytes": 2842
+    },
+    "assets/settings/application-icons/gameGear-tray.png": {
+      "sha256": "95bbd72b6b9b8e491c1c64c732554cbd609876dd1df0c46de8218082519b6fb4",
+      "bytes": 799
+    },
+    "assets/settings/application-icons/gameGuide-app.png": {
+      "sha256": "5dc076a65ddc2675355a1c507d1d0cf0a4d0d14a95ec06215ad3f94904e34d0b",
+      "bytes": 2425
+    },
+    "assets/settings/application-icons/gameGuide-tray.png": {
+      "sha256": "8536a7b0a803595eb2dcd07f2adf195b6552c08f9ffc0782173ad7b190b8240d",
+      "bytes": 996
+    },
+    "assets/settings/application-icons/gameHeadhunt-app.png": {
+      "sha256": "fa46c7fcf1ad51a66db03b0c69c1c30cfee613309c123e06a1c1988dc6d3b264",
+      "bytes": 4261
+    },
+    "assets/settings/application-icons/gameHeadhunt-tray.png": {
+      "sha256": "39e1b7f10da9b4c2f5dc89caadfa1f03ca103f67b05a2a2c3354d472dc3e8fdd",
+      "bytes": 1464
+    },
+    "assets/settings/application-icons/gameInfo-app.png": {
+      "sha256": "dac0a7fc5d76d35a086180408cfc1ecc04564cb13951a2ac6ef58cddfd465c60",
+      "bytes": 2877
+    },
+    "assets/settings/application-icons/gameInfo-tray.png": {
+      "sha256": "ae94f9b12e2afc59646016582a5ca409b73b53fa259aa2e297cb16080cf33633",
+      "bytes": 1046
+    },
+    "assets/settings/application-icons/gameMedal-app.png": {
+      "sha256": "1896d6c99900ccf40ae47964a37a8d988d5e78c04168e3c5c4bc0bf524c00447",
+      "bytes": 2946
+    },
+    "assets/settings/application-icons/gameMedal-tray.png": {
+      "sha256": "b0d3b9374e19ce1a3c436e59b0b6408073036b232e05a9ff092307b38f772058",
+      "bytes": 927
+    },
+    "assets/settings/application-icons/gameMission-app.png": {
+      "sha256": "f46a1f1feb45cc1020ee040103a647a9894259462df6157df496346dd0e33a69",
+      "bytes": 1914
+    },
+    "assets/settings/application-icons/gameMission-tray.png": {
+      "sha256": "e00131d6e36d057eeecd21a8a75501b8fbc90542b18f7e547033285698dfe5b1",
+      "bytes": 902
+    },
+    "assets/settings/application-icons/gameOperationalManual-app.png": {
+      "sha256": "e139fd3675ee883de160e70e4b49d61086eabc41386bb3753b8cf5f5d14d56fe",
+      "bytes": 2434
+    },
+    "assets/settings/application-icons/gameOperationalManual-tray.png": {
+      "sha256": "7519048ef39e6ae26ed7c933f5864916a6365a6b79854ab8d25c8308087694c0",
+      "bytes": 930
+    },
+    "assets/settings/application-icons/gameOperator-app.png": {
+      "sha256": "075f329fc0ab752b90d451717cb3e5b53c3e6db11d7c8aa97462f56cd28c34b9",
+      "bytes": 3113
+    },
+    "assets/settings/application-icons/gameOperator-tray.png": {
+      "sha256": "69084de91b8debd07b9a833660ea1614d55088a93051d2d011b08b7192785c36",
+      "bytes": 1007
+    },
+    "assets/settings/application-icons/gameOrigeometry-app.png": {
+      "sha256": "8f4a3390c85aa8f3db16153b765ed1f5435937b9dc58ac257b2a46fe6bb6c02c",
+      "bytes": 4362
+    },
+    "assets/settings/application-icons/gameOrigeometry-tray.png": {
+      "sha256": "9b272f2d84a32c142faaf60d0a08617d5105d00287d4c2c12a6fc8e542f80116",
+      "bytes": 1241
+    },
+    "assets/settings/application-icons/gameOroberyl-app.png": {
+      "sha256": "987a11d63e17d02678413bb209c1045b45c45772936c232d08c0a2210e44ab18",
+      "bytes": 4493
+    },
+    "assets/settings/application-icons/gameOroberyl-tray.png": {
+      "sha256": "b0af2a75b2d707a27625c284631185ca4592e0f75c6932796e147b360ea5b3d4",
+      "bytes": 1352
+    },
+    "assets/settings/application-icons/gamePower-app.png": {
+      "sha256": "6a051c046a53cdb6d6fb786a381a4528e527925710a01d1c12c43e0f728a29e0",
+      "bytes": 2765
+    },
+    "assets/settings/application-icons/gamePower-tray.png": {
+      "sha256": "e64e566a75ed595cf4fe7e4a0f84b520d04456748e4ef407fb77966480b3f114",
+      "bytes": 936
+    },
+    "assets/settings/application-icons/gameProtocolPass-app.png": {
+      "sha256": "1b2fe9a4f93a55f0dc4b08a86e7b07dc2456b60101737daed7a1084c45ed0b07",
+      "bytes": 3140
+    },
+    "assets/settings/application-icons/gameProtocolPass-tray.png": {
+      "sha256": "030e2df9f97b612afe9c497eb8ca70de42c99301db2b44f8e2f6e0c08e23b0db",
+      "bytes": 920
+    },
+    "assets/settings/application-icons/gameRegion-app.png": {
+      "sha256": "f2ccf189cebdb7ef69b9f892376271e06214eb927c04b627bddd37605fe970f5",
+      "bytes": 2354
+    },
+    "assets/settings/application-icons/gameRegion-tray.png": {
+      "sha256": "8eafaa5368a9410b8f309d7a183af7b187a14405fd6df8b2512ea1ef0223bab7",
+      "bytes": 1048
+    },
+    "assets/settings/application-icons/gameSanity-app.png": {
+      "sha256": "1afaaac39014350b8606cd182e368dfc6703bc4c0c2b90a883349798b9252aa2",
+      "bytes": 3162
+    },
+    "assets/settings/application-icons/gameSanity-tray.png": {
+      "sha256": "388344823ada9da94afa64fd7fdffcbc514fade290782a4e65e27f9cd1774a07",
+      "bytes": 1255
+    },
+    "assets/settings/application-icons/gameStore-app.png": {
+      "sha256": "a33830571109e388fc8cfc00e5fd657e866446b2ee043a0c646f3d14dc7c0cdf",
+      "bytes": 3408
+    },
+    "assets/settings/application-icons/gameStore-tray.png": {
+      "sha256": "f5b523463cfec49db0ed3bdbd44dc86a155e2047fe245c43f106753725e0eb55",
+      "bytes": 1296
+    },
+    "assets/settings/application-icons/gameStory-app.png": {
+      "sha256": "d5569eb7bfb538eba1b1435439dd29183301abf0d4194c3074ceaf6c2e01eb39",
+      "bytes": 2284
+    },
+    "assets/settings/application-icons/gameStory-tray.png": {
+      "sha256": "6ea16aad9b03d373a390b2f163de1043933681db9f2ab483c0d099cd6f30854e",
+      "bytes": 946
+    },
+    "assets/settings/application-icons/gameStrength-app.png": {
+      "sha256": "e969a6335383cee5102f54b95f809e3d011e6c46c5c7eaca41cb44633d0e6e52",
+      "bytes": 1924
+    },
+    "assets/settings/application-icons/gameStrength-tray.png": {
+      "sha256": "0cbb2aed9ea65cf8e6188b3645f1dde257c740e83b8daa213a775ca42ac5ffaa",
+      "bytes": 753
+    },
+    "assets/settings/application-icons/gameValleyIV-app.png": {
+      "sha256": "f573c552a2fe19d00ba54eeb15a37d88078e08b8e495ad9f83789567cbb8fd47",
+      "bytes": 1778
+    },
+    "assets/settings/application-icons/gameValleyIV-tray.png": {
+      "sha256": "790eef7665993eafd22be2476d74920f3862eff9894d1130a5e0c1d5587ba5ef",
+      "bytes": 539
+    },
+    "assets/settings/application-icons/gameWeapon-app.png": {
+      "sha256": "1ee9221e9775686bbd1ce1c5c099e85b5770a7f7c140201934cb0225d8e0a9cd",
+      "bytes": 2956
+    },
+    "assets/settings/application-icons/gameWeapon-tray.png": {
+      "sha256": "14db0611f9cc71d453894fac36d57d9affc791453eed831321a1bc97c704f67e",
+      "bytes": 1040
+    },
+    "assets/settings/application-icons/gameWorldMap-app.png": {
+      "sha256": "23ecd4c929ba45f1869f756dc4b9e5204eff626f79925b90056cf84192f983a5",
+      "bytes": 4467
+    },
+    "assets/settings/application-icons/gameWorldMap-tray.png": {
+      "sha256": "4769a13c6ec5cceba28596698b08ead41ecb9440cf2a870a69e9297bfd70b953",
+      "bytes": 1708
+    },
+    "assets/settings/application-icons/gameWuling-app.png": {
+      "sha256": "adf561fd6cc330e1f390e5220b9826d84c7138ec6949e6cec26ad47f56b6f5c3",
+      "bytes": 2254
+    },
+    "assets/settings/application-icons/gameWuling-tray.png": {
+      "sha256": "21d69c357031d808206f4d6ad9c6b62153dbd1c962e0217557f5b1dbe5d9e5e9",
+      "bytes": 834
+    },
+    "assets/settings/application-icons/humanResources-app.png": {
+      "sha256": "aee5e68b8b380f32211dcec82bcbd6cebf3c2a0bcec93f6beddaa5b95ba6cdf9",
+      "bytes": 2780
+    },
+    "assets/settings/application-icons/humanResources-tray.png": {
+      "sha256": "3c26a436974bc909c6f32a539552957afbc4b62f3c6f358ff9b56c02135e7a5e",
+      "bytes": 847
+    },
+    "assets/settings/application-icons/icefieldMessenger-app.png": {
+      "sha256": "18c46247237cf7b3bffeae2fbc49066bd7fcb56ff330a9271c8c2e38ea2b5338",
+      "bytes": 4510
+    },
+    "assets/settings/application-icons/icefieldMessenger-tray.png": {
+      "sha256": "b699f925a66b2629c468026be3d9eddedba764f78c92f7434f6e2cea77021108",
+      "bytes": 1401
+    },
+    "assets/settings/application-icons/kjerag-app.png": {
+      "sha256": "a9cb083c5bcfb06ff943f29791ffcbbe6163e6b8493931d62ba9a0e63f5546c9",
+      "bytes": 5474
+    },
+    "assets/settings/application-icons/kjerag-tray.png": {
+      "sha256": "0b7d36dc8f0e6bbd7b7218e460a207c8a9aabcdf422ebc18395b910c539296c4",
+      "bytes": 1795
+    },
+    "assets/settings/application-icons/manifest.json": {
+      "sha256": "03410e102c88cbc7e3e13b172e6e6f32b9501025f2b1bac13eee3aa03f946e6f",
+      "bytes": 43383
+    },
+    "assets/settings/application-icons/marthe-app.png": {
+      "sha256": "e4a16ea39aa3dd097800d2d0d536ec0b5b01abf16d21a70e65fe28cfbe20d699",
+      "bytes": 2115
+    },
+    "assets/settings/application-icons/marthe-tray.png": {
+      "sha256": "3a8e43a6cce1136035337de3b1d4de2515f099cb3ba821a570bb30ade2b93a35",
+      "bytes": 690
+    },
+    "assets/settings/application-icons/obsidianFestival-app.png": {
+      "sha256": "bbf4bdecc871b24995aa95233a4d81eb813cc9725492d48df9702cd1c9d2496f",
+      "bytes": 4381
+    },
+    "assets/settings/application-icons/obsidianFestival-tray.png": {
+      "sha256": "72c78db75b3e1e12ce95bce79faf1075dbbe1852858b23e9dd6e593911bcf7ca",
+      "bytes": 1396
+    },
+    "assets/settings/application-icons/originium-app.png": {
+      "sha256": "80e222cfd348aba33dc182b952063cde3673666dd22d63ab8ae9d317109ed63f",
+      "bytes": 13147
+    },
+    "assets/settings/application-icons/originium-tray.png": {
+      "sha256": "3b6bc1acd9ef76d53f26a6834c3ddbdffe4c2065edf7df745ed77788d7f42dd6",
+      "bytes": 4216
+    },
+    "assets/settings/application-icons/orundum-app.png": {
+      "sha256": "10e39821a0ee059479c21c15fe8da5ee93c50012e135920ded45ec452931a168",
+      "bytes": 11159
+    },
+    "assets/settings/application-icons/orundum-tray.png": {
+      "sha256": "0ec89aecff78791d2606d26e58af516a7fa20a4480f44d79864a0d653fa3af28",
+      "bytes": 4165
+    },
+    "assets/settings/application-icons/penguinLogistics-app.png": {
+      "sha256": "7db76df9ed4a86f1828b40d13256b544aa35451303807cd41a59befe631ba84c",
+      "bytes": 4288
+    },
+    "assets/settings/application-icons/penguinLogistics-tray.png": {
+      "sha256": "62cfcaccc9906326a0c372525f58c0546a0d7df26cfe5399a2ecf1a05f3cd893",
+      "bytes": 1436
+    },
+    "assets/settings/application-icons/perlica-app.png": {
+      "sha256": "851837b39a8fce8ba3210b9963ccc3c69c1d2e3cbf5eb7bc2497832c4a0403c8",
+      "bytes": 9507
+    },
+    "assets/settings/application-icons/perlica-tray.png": {
+      "sha256": "a0bcfb8af76952e36379f09b82f30c3ea0b7853e33fd8a4db25bf1fd6c29a3b3",
+      "bytes": 4401
+    },
+    "assets/settings/application-icons/projectRed-app.png": {
+      "sha256": "05f36c537405c4deb7483c06bcbe61a3cae1fc52c12b1791b395819b86808c8d",
+      "bytes": 2870
+    },
+    "assets/settings/application-icons/projectRed-tray.png": {
+      "sha256": "39c8702a81029ea160a23a283a2d50d56d6f899174946c3f1b2cb9a788dc63b7",
+      "bytes": 1118
+    },
+    "assets/settings/application-icons/rhineLab-app.png": {
+      "sha256": "4891e273f6d19db9b692dd8ebf7ab398c28c72ea05d008608283cf272ec7560b",
+      "bytes": 3043
+    },
+    "assets/settings/application-icons/rhineLab-tray.png": {
+      "sha256": "d7c6ed716f38be0121052d2980a8db3ca7a9d7fbfb8760864be6fd426c364fae",
+      "bytes": 1026
+    },
+    "assets/settings/application-icons/rhodesIsland-app.png": {
+      "sha256": "33b9bf4162db88f8d26d1aafaf2a2479212e80f635fa95df6673c67d74411c7b",
+      "bytes": 3291
+    },
+    "assets/settings/application-icons/rhodesIsland-tray.png": {
+      "sha256": "7ceb58852c9db867fd025a184fe7c9faa3f2416dc16f15790145b1882418ca87",
+      "bytes": 1087
+    },
+    "assets/settings/application-icons/rhodesKitchen-app.png": {
+      "sha256": "c51b600ecfbd601eb0268efd0e7fad1a2e5679a754918e81a30be49670164459",
+      "bytes": 3329
+    },
+    "assets/settings/application-icons/rhodesKitchen-tray.png": {
+      "sha256": "8aa172f913f0f69795a8c0ed7e7cc4c043939094d63e5d023b2d75dc94818b04",
+      "bytes": 1055
+    },
+    "assets/settings/application-icons/rimBilliton-app.png": {
+      "sha256": "2e59594b779d7c13036531ffa2be68730bff6eeac9794a6335e43bd35a90df30",
+      "bytes": 2662
+    },
+    "assets/settings/application-icons/rimBilliton-tray.png": {
+      "sha256": "78207bfb250c7a8709a892607fe4b80bb08586f6a9b76ef0d079ccf4752690ff",
+      "bytes": 894
+    },
+    "assets/settings/application-icons/sweep-app.png": {
+      "sha256": "37df5505573142b53fccfd6eb667d032aea3f110fda49261e8e28c7e5e895a84",
+      "bytes": 2857
+    },
+    "assets/settings/application-icons/sweep-tray.png": {
+      "sha256": "a6e67db2f5ba0d5ac86b9d673feb259d89c28d94b1ebe5e30dbf90d1b0ffebba",
+      "bytes": 947
+    },
+    "assets/settings/application-icons/ursusStudents-app.png": {
+      "sha256": "bbe3d84d201731b256353e1bf0bd467b57f154fa27c66298216b6449e50baff5",
+      "bytes": 5333
+    },
+    "assets/settings/application-icons/ursusStudents-tray.png": {
+      "sha256": "01b5f35c3f584e0a42922881ded9be70842517e64c7762466ed64624a23f4f5f",
+      "bytes": 1704
+    },
+    "assets/settings/application-icons/vitafield-app.png": {
+      "sha256": "9d57a4db1ece134ff89b5c7b54a2c4e056b45030707a50514a16ef67bbf770dd",
+      "bytes": 4791
+    },
+    "assets/settings/application-icons/vitafield-tray.png": {
+      "sha256": "b57a5564d879e09a42c0027101d18928c70f1b9cd00c7dd499f02ff62a59848e",
+      "bytes": 1553
+    },
+    "assets/settings/center-logos/SOURCE.json": {
+      "sha256": "86738e829410b980a3d0e3fa22a6aadbfe100c8c7042606cd61e780329f0660d",
+      "bytes": 1106
+    },
+    "assets/settings/center-logos/babel.png": {
+      "sha256": "0adcabe94b68a02216e433e76bb0fe51dbad45f017783bddf8ab2f6a8415cc3a",
+      "bytes": 82056
+    },
+    "assets/settings/center-logos/endfield.png": {
+      "sha256": "dd5468819ce5cff39cc5d8063ca3248b4f57a2addc0d8d97b5384c8871cd3db3",
+      "bytes": 47184
+    },
+    "assets/settings/center-logos/rhineLab.png": {
+      "sha256": "9d0f2a2e9a457bcbd04c0c36731626b248c6ac50253ff2806b4cc13367fc9397",
+      "bytes": 38057
+    },
+    "assets/settings/center-logos/rhodesIsland.png": {
+      "sha256": "d57d81c672acfad13bf297d0d65443cdfdd6d83dd823613ea311fa61db748892",
+      "bytes": 77490
+    },
+    "assets/watch/SOURCES.json": {
+      "sha256": "320544bc4f1d4f4761accb20ef023a700be9bb59b87907b076cf1354f031e962",
+      "bytes": 2848
+    },
+    "assets/watch/clips.json": {
+      "sha256": "dc58947f6b35e8f21037deb65b0d05882b1e93f998e0576844939a64e7017515",
+      "bytes": 5552149
+    },
+    "assets/watch/deco_04.png": {
+      "sha256": "7fc16492a48fa95bd5eaed9834b6cd02288d9dc70e1b9d4c1a7278cc41e11a94",
+      "bytes": 4380
+    },
+    "assets/watch/endfield_industries.png": {
+      "sha256": "dd5468819ce5cff39cc5d8063ca3248b4f57a2addc0d8d97b5384c8871cd3db3",
+      "bytes": 47184
+    },
+    "assets/watch/runtime-root-camera.json": {
+      "sha256": "73e1d41f35839aaed65ddc39ad0dce7cf1ef4e3a8afb8c927e4a8ef4e1013fda",
+      "bytes": 56193
+    },
+    "assets/watch/scene.json": {
+      "sha256": "70f5fa1987c701d6dd904020675689a1d816618c80b9223cfb284e1775855396",
+      "bytes": 2037430
+    },
+    "assets/watch/ui_main_loop_bg.png": {
+      "sha256": "ffc01e9b37b19e503f73870bf570d25df2103a78fc377e73efd371564e644f4e",
+      "bytes": 28738
+    },
+    "assets/watch/ui_mid_ring.png": {
+      "sha256": "0e00cd2096764f5c02aa58700e1cf1756f8aa96bda00043fa6d9b2d9b37adb66",
+      "bytes": 55278
+    },
+    "assets/watch/ui_out1_ring.png": {
+      "sha256": "0ffe2947c723ed2bf168a632a56433d5e7bb92a68b0e223a201abbcc8754544e",
+      "bytes": 17973
+    },
+    "assets/watch/ui_out_ring.png": {
+      "sha256": "ae03617e17ba88f1b325cb6f16d4081b133be8780be65891879b8dbc5bace5e4",
+      "bytes": 36119
+    },
+    "assets/watch/ui_triangle_fx.png": {
+      "sha256": "8b9c6742b0a86441437462c8d4d1d87eba23d774cc7c88f527e43f8029ad6920",
+      "bytes": 3792
+    },
+    "assets/watch/watch-blur.json": {
+      "sha256": "87767f77fe5845150e0dc675771cc6adc792075cbbd8fb6d41f405e6db931464",
+      "bytes": 4828
+    },
+    "assets/watch-dial/T_fx_mask_03_02_M--2907729466900039472.mipdata.bgra-mips.bin": {
+      "sha256": "05dfaab8dd39ce3bd5365ea23d9303a2e697148e0927499295c21ecba8ae751e",
+      "bytes": 349524
+    },
+    "assets/watch-dial/T_fx_mask_115_M-6732101524129230635.mipdata.bgra-mips.bin": {
+      "sha256": "ce8a15cec5e7b55074530f3271f97a0e1b5e77ade86a73e0a7d6ed75b777f398",
+      "bytes": 87380
+    },
+    "assets/watch-dial/T_fx_mask_309_C_M--2027343758230467644.mipdata.bgra-mips.bin": {
+      "sha256": "6ff83824f0c0984aa286b25ad89cc94bc16e9ebe0deae191f616c6c7f119c2f9",
+      "bytes": 21844
+    },
+    "assets/watch-dial/bg_overview_01-8033854282542486965.mipdata.bgra-mips.bin": {
+      "sha256": "8a6dfce29c551b27a8ff52d7590b48f6c868d3b88cc8c4e425f06882ec804f6c",
+      "bytes": 9331200
+    },
+    "assets/watch-dial/common_deco_circle--ea162877--5094076238273119260.bgra-mips.bin": {
+      "sha256": "f838e25e2a3b51e6234f2720001bad6acc054861fd411f18580e9c8eea5015aa",
+      "bytes": 69696
+    },
+    "assets/watch-dial/deco_04--2e4c429a--6834532711761410188.bgra-mips.bin": {
+      "sha256": "798332f2caf84fa936fe1473a6dc30a6435bd9496e54d7d1021e8a3d834a8deb",
+      "bytes": 1048576
+    },
+    "assets/watch-dial/deco_assembly04_01--408355f4--7270691129072433511.bgra-mips.bin": {
+      "sha256": "12eaeee8720fd53208d2a8cd50dccf711f80fe4586d655e35dd76f10501d06c3",
+      "bytes": 1600
+    },
+    "assets/watch-dial/deco_inring01_1--8804815f---5375660939394566864.bgra-mips.bin": {
+      "sha256": "b6d21ad28d7e42e1abeec4c39d8cc88f457512575c1c30a14206f2f6b04a1db3",
+      "bytes": 425984
+    },
+    "assets/watch-dial/deco_ring_bg3-201362393250646321.mipdata.bgra-mips.bin": {
+      "sha256": "733edcb71bd869b6766580f0f94ed21671fca4efb4b80bf5374997b308a88eca",
+      "bytes": 82944
+    },
+    "assets/watch-dial/dial.json": {
+      "sha256": "0750478994300abfb06fb547c190ac5f172f57c20096310913d4a78781546040",
+      "bytes": 1803989
+    },
+    "assets/watch-dial/ui_main_loop_bg--bf352424--8210924552702367426.bgra-mips.bin": {
+      "sha256": "42b2cceb53d2bf084e0924b0931b150523b8393377d8548bc81a058b57e6f5e4",
+      "bytes": 4194304
+    },
+    "assets/watch-dial/ui_main_menu_bg--ab365057--1033241395287901702.bgra-mips.bin": {
+      "sha256": "cc461186db6ab48eb6e3feedc236b04f61b5200d1b4989bfaf42ec2d429130a2",
+      "bytes": 329472
+    },
+    "assets/watch-dial/ui_main_menu_logo_bloom--d59c4916---152609855286765739.bgra-mips.bin": {
+      "sha256": "cf61eb0dfebd5108becf09a85f27e738ae260664f5d0bc3ed219e1e381888053",
+      "bytes": 136000
+    },
+    "assets/watch-dial/ui_main_menu_logo_icon--adadde19---6461589461473869919.bgra-mips.bin": {
+      "sha256": "82d4f6bb3af08240076a1b23328651a9530446c9c3a77f6c1dee3efa62c9b502",
+      "bytes": 82688
+    },
+    "assets/watch-dial/ui_main_menu_loop_bg01--5363093005661918326.mipdata.bgra-mips.bin": {
+      "sha256": "24ab4d9bd2b085061931f065f9c24d0b2cfc41d2b43030b0b335a7bc25a14089",
+      "bytes": 530880
+    },
+    "assets/watch-dial/ui_mid_ring--394f8ef3--3025623079528015470.bgra-mips.bin": {
+      "sha256": "dafb598efb84a14692ea2098ef218d4bbacecf497d8ba34e38fb3bd69f8ec4ae",
+      "bytes": 4194304
+    },
+    "assets/watch-dial/ui_out1_ring--48501457--7567071519668357209.bgra-mips.bin": {
+      "sha256": "098dc57e0ce20b141b80a9bdb81cbc92141810fca1a2adc73d9e85e3546833af",
+      "bytes": 1440000
+    },
+    "assets/watch-dial/ui_out2_ring--2b744295---2891887869778290059.bgra-mips.bin": {
+      "sha256": "8f4341d0c85cdd98d40fb5946935660531fc8d12d8c2a7b87aea27feb882e889",
+      "bytes": 2304
+    },
+    "assets/watch-dial/ui_out_ring--53eb1b73--8746940503448238659.bgra-mips.bin": {
+      "sha256": "f93f7d34772191bcad58bfd706d5c3d309cafe034f278c82699a3ce9fd1ee66d",
+      "bytes": 4194304
+    },
+    "assets/watch-dial/ui_triangle_fx--7b0d4d8e--3779012540861036597.bgra-mips.bin": {
+      "sha256": "8cae4715420c72472c710d1f65a9b2196620a06c63eb1ec907cb0bc344938e97",
+      "bytes": 75776
+    },
+    "assets/watch-surfaces/btn_hubdata.png": {
+      "sha256": "42072bef8d6eec9e685bfbd662fa191092a3122a69faf81a1118b78efa5d5f7d",
+      "bytes": 2120
+    },
+    "assets/watch-surfaces/deco_botton_ring.png": {
+      "sha256": "a07f74fe345fe5797dda806d4c4793cba2d4a559a513936a568ac4125c0b82b8",
+      "bytes": 127183
+    },
+    "assets/watch-surfaces/ui_main_menu_bg.png": {
+      "sha256": "fb20fbcbc1db92b6df5b4cf81c60b76b8c1e9f6fdfa5ac8beec541440eb4d188",
+      "bytes": 7284
+    },
+    "assets/watch-surfaces/ui_out2_ring.png": {
+      "sha256": "332af7ca7779f30dbe1d7f0f2740acb643124cbf17f1a26b08c1e694547c2d7b",
+      "bytes": 1313
+    },
+    "assets/watch-surfaces/ui_out_ring.png": {
+      "sha256": "ae03617e17ba88f1b325cb6f16d4081b133be8780be65891879b8dbc5bace5e4",
+      "bytes": 36119
+    },
+    "assets/watch-surfaces/watchfactory_bg.png": {
+      "sha256": "689832989d8c54ce9acb0938ac14903d4deba4b56fabe4b5922149f907ba0d0a",
+      "bytes": 39393
+    },
+    "assets/watch-surfaces/watchfactory_r_bg.png": {
+      "sha256": "da44c65898cb6d370e39b0d0016dcff5dc23fcb6da5e00170307c45793898511",
+      "bytes": 37496
+    },
+    "assets/world-map/Countries.bin": {
+      "sha256": "b4fd270f78e46f877126b41465da706d1f85d90a0ff82cdd777ac0c869aa64a7",
+      "bytes": 953915
+    },
+    "assets/world-map/Terrain.bin": {
+      "sha256": "5356727bab11c5f96d69a94658d4f884a2e56b01e89f837670d57660e66635dd",
+      "bytes": 601709
+    },
+    "assets/world-map/disc-mask.png": {
+      "sha256": "156db47908364dc994ab754c5130723cb32f527ffd483fba2936c778cc0e498d",
+      "bytes": 46221
+    },
+    "assets/world-map/player-beam.png": {
+      "sha256": "4ca3a5967e2ebec6a2c81dc11524982c779c1ce76c9cec6aa117f52009cfde22",
+      "bytes": 19861
+    },
+    "assets/world-map/player-glyph.png": {
+      "sha256": "70bd654ab7084d7441d86c7c137811d923f59c4a4a5c5dd65715271c18f18799",
+      "bytes": 8399
+    },
+    "assets/world-map/player-halo.png": {
+      "sha256": "894c68809ebe85af4841b879806a9c35b1fed9241a6c722e0bed60a1bf250f72",
+      "bytes": 11506
+    },
+    "assets/world-map/terrain.png": {
+      "sha256": "c296b4327e7895565df75b51ef97881da76e63313742989cc455155da71d72ad",
+      "bytes": 150569
+    },
+    "assets/world-map/world-detail.png": {
+      "sha256": "037532bc7eaa5a7d9e793976ad66f57fc1015076838795dd8b63ce14b09ed956",
+      "bytes": 451880
+    }
+  }
+}

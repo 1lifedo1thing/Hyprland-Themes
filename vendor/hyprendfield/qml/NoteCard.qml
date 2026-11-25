@@ -1,0 +1,321 @@
+import QtQuick
+import "Appearance.js" as Appearance
+import QtQuick.Shapes
+import QtQuick.Controls as Controls
+
+Item {
+    id: card
+    objectName: "noteCard-" + entry.id
+    required property var entry
+    required property var host
+    property bool selected: false
+    property bool reduceMotion: false
+    readonly property bool redacted: Appearance.recording()
+    property bool deleteArmed: false
+    property var textStyle: ({})
+    property bool textDirty: false
+    function refreshStyle() { textStyle = notesController.formatState(noteText.textDocument, noteText.cursorPosition) }
+    function saveText() { textSave.stop(); if (entry.kind === "text" && textDirty) { const value = noteText.text; if (notesController.updateNoteRichText(entry.id, value)) textDirty = false; } }
+    Component.onDestruction: if (textDirty) saveText()
+    onVisibleChanged: if (!visible) { if (noteText.activeFocus) saveText(); noteText.focus = false; formatPopup.kind = "" }
+    Timer { id: textSave; interval: 450; onTriggered: card.saveText() }
+    signal selectedRequested(string id)
+    signal geometryCommitted(string id, real x, real y, real width, real height)
+    signal deleteRequested(string id)
+    signal deleteCancelled()
+    signal deleteConfirmed(string id)
+
+    x: entry.x; y: entry.y; width: entry.width; height: entry.height
+    z: entry.z + (selected ? 100000 : 0)
+    opacity: 1
+    transform: Scale {
+        origin.x: card.width / 2; origin.y: card.height / 2
+        xScale: card.visible ? 1 : 0.94; yScale: xScale
+    }
+    Behavior on opacity { NumberAnimation { duration: card.reduceMotion ? 0 : 200 } }
+    RedactionBlock { x: 5; y: 24; width: card.width - 10; height: card.height - 29; visible: card.redacted; content: card.entry.kind === "text" ? card.entry.text : card.entry.kind === "todo" ? card.entry.tasks.map(task => task.text).join("\n") : "REDACTED"; z: 1 }
+
+    Shape {
+        anchors.fill: parent; preferredRendererType: Shape.CurveRenderer
+        ShapePath {
+            strokeColor: card.selected ? Appearance.accent("#FFFA00") : Appearance.tone("#555555"); strokeWidth: 1
+            fillColor: Appearance.tone("#1C1C1C")
+            PathSvg { path: "M.5 .5H" + (card.width - 8) + "L" + (card.width - .5) + " 8V" + (card.height - .5) + "H.5Z" }
+        }
+    }
+    Shape {
+        width: parent.width; height: 24; preferredRendererType: Shape.CurveRenderer
+        ShapePath {
+            strokeWidth: -1; fillColor: Appearance.tone("#262626")
+            PathSvg { path: "M1 1H" + (card.width - 8) + "L" + (card.width - 1) + " 8V24H1Z" }
+        }
+    }
+    Rectangle { x: 1; y: 1; width: 2; height: 22; color: Appearance.accent("#FFFA00"); visible: card.selected }
+    Grid {
+        x: 7; y: 6; columns: 2; rowSpacing: 2; columnSpacing: 2
+        Repeater { model: 6; Rectangle { width: 2; height: 2; radius: 1; color: Appearance.tone("#818181") } }
+    }
+    Text {
+        x: 20; y: 6; width: Math.max(10, card.width - 76); height: 12
+        text: card.entry.kind === "text" ? qsTr("文字") : card.entry.kind === "todo" ? qsTr("待办") : card.entry.kind === "drawing" ? qsTr("画画") : card.entry.kind === "video" ? qsTr("视频") : qsTr("图片")
+        color: Appearance.tone("#8A8A8A"); font.family: harmonyBold.name; font.pointSize: 9.5 * 0.75; font.weight: Font.Bold; font.letterSpacing: 1.14
+        elide: Text.ElideRight; renderType: Text.CurveRendering
+    }
+    MouseArea {
+        id: moveArea; x: 0; y: 0; width: Math.max(20, card.width - 50); height: 24
+        hoverEnabled: true; cursorShape: pressed ? Qt.ClosedHandCursor : Qt.OpenHandCursor
+        property real startX; property real startY; property real originalX; property real originalY
+        onPressed: mouse => {
+            card.selectedRequested(card.entry.id)
+            startX = mouse.x; startY = mouse.y; originalX = card.x; originalY = card.y
+        }
+        onPositionChanged: mouse => {
+            if (!pressed) return
+            card.x = Math.max(0, Math.min(card.host.width - card.width, originalX + mouse.x - startX))
+            card.y = Math.max(0, Math.min(card.host.height - card.height, originalY + mouse.y - startY))
+        }
+        onReleased: card.geometryCommitted(card.entry.id, card.x, card.y, card.width, card.height)
+    }
+    Item {
+        x: card.width - 44; y: 3; width: 18; height: 18
+        Rectangle { anchors.fill: parent; color: pinMouse.containsMouse || card.entry.pinned ? Appearance.accent("#FFFA00") : "transparent" }
+        NotesGlyph { anchors.centerIn: parent; width: 10; height: 10; kind: "pin"; ink: card.entry.pinned || pinMouse.containsMouse ? Appearance.tone("#151515") : Appearance.tone("#A0A0A0") }
+        MouseArea { id: pinMouse; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor; onClicked: { card.selectedRequested(card.entry.id); notesController.toggleNotePin(card.entry.id) } }
+    }
+    Item {
+        x: card.width - 23; y: 3; width: 18; height: 18
+        Rectangle { anchors.fill: parent; color: deleteMouse.containsMouse ? "#E5383B" : "transparent" }
+        NotesGlyph { anchors.centerIn: parent; width: 9; height: 9; kind: "close"; ink: deleteMouse.containsMouse ? Appearance.tone("#FFFFFF") : Appearance.tone("#A0A0A0") }
+        MouseArea { id: deleteMouse; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor; onClicked: card.deleteRequested(card.entry.id) }
+    }
+
+    Item {
+        id: textBody; x: 9; y: 29; width: card.width - 18; height: Math.max(1, card.height - (noteText.activeFocus ? 58 : 37))
+        visible: card.entry.kind === "text" && !card.redacted
+        Flickable {
+        id: textScroll; anchors.fill: parent; clip: true; contentHeight: noteText.contentHeight; boundsBehavior: Flickable.StopAtBounds
+        Controls.ScrollBar.vertical: Controls.ScrollBar { width: 4; policy: Controls.ScrollBar.AsNeeded }
+        TextEdit {
+            id: noteText; objectName: "floatingNoteText"; width: textScroll.width; height: Math.max(textScroll.height, contentHeight); wrapMode: TextEdit.Wrap; selectByMouse: true
+            textFormat: TextEdit.RichText
+            Binding on text { when: !noteText.activeFocus && !card.textDirty; value: card.entry.richText || ("<p>" + card.entry.text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br>") + "</p>"); restoreMode: Binding.RestoreNone }
+            color: Appearance.tone("#EDEDED"); selectionColor: "#66FFFA00"; selectedTextColor: Appearance.tone("#FFFFFF")
+            font.family: harmonyRegular.name; font.pixelSize: 12; renderType: Text.CurveRendering
+            onTextChanged: if (activeFocus) { card.textDirty = true; textSave.restart(); card.refreshStyle() }
+            onCursorPositionChanged: { card.refreshStyle(); if (cursorRectangle.y < textScroll.contentY) textScroll.contentY = cursorRectangle.y; else if (cursorRectangle.y + cursorRectangle.height > textScroll.contentY + textScroll.height) textScroll.contentY = cursorRectangle.y + cursorRectangle.height - textScroll.height; }
+            onActiveFocusChanged: {
+                if (activeFocus) { card.selectedRequested(card.entry.id); card.refreshStyle() }
+                else { card.saveText(); formatPopup.kind = "" }
+            }
+            Keys.onEscapePressed: event => { focus = false; event.accepted = true }
+            Keys.onReturnPressed: event => { if (event.modifiers & Qt.ControlModifier) { focus = false; event.accepted = true } else event.accepted = false }
+        }
+        }
+        Text { visible: noteText.text === "" && !noteText.activeFocus; text: qsTr("开始书写"); color: Appearance.tone("#777777"); font.family: harmonyRegular.name; font.pixelSize: 12; renderType: Text.CurveRendering }
+    }
+    Row {
+        x: 5; y: card.height - 25; spacing: 4; visible: card.entry.kind === "text" && noteText.activeFocus && !card.redacted; z: 101
+        Repeater {
+            model: ["size", "font", "color", "special"]
+            Rectangle {
+                required property string modelData; required property int index
+                width: 20; height: 20; color: Appearance.tone("#262626"); border.color: Appearance.tone("#3A3A3A")
+                Text { anchors.centerIn: parent; text: ["A", "F", "", "B"][index]; font.pixelSize: 10; color: Appearance.tone("#DDDDDD") }
+                Rectangle { anchors.centerIn: parent; width: 12; height: 12; visible: modelData === "color"; color: card.textStyle.color || "#EDEDED" }
+                MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: { formatPopup.x = Math.min(index * 24 + 5, card.host.width - card.x - formatPopup.width); formatPopup.kind = formatPopup.kind === modelData ? "" : modelData; } }
+            }
+        }
+    }
+    NoteFormatMenu {
+        id: formatPopup; y: card.y + card.height + height + 3 > card.host.height ? -height - 3 : card.height + 3; style: card.textStyle
+        onChanged: (key, value) => { notesController.applyFormat(noteText.textDocument, noteText.selectionStart, noteText.selectionEnd, key, value); card.refreshStyle(); textSave.restart(); }
+    }
+
+    Item {
+        id: todoBody; x: 5; y: 27; width: card.width - 10; height: card.height - 31
+        visible: card.entry.kind === "todo" && !card.redacted
+        ListView {
+            id: noteTasks; width: parent.width; height: parent.height - 28; clip: true
+            model: card.entry.tasks; spacing: 1; boundsBehavior: Flickable.StopAtBounds
+            delegate: Item {
+                id: taskRow; required property var modelData; required property int index
+                width: noteTasks.width; height: 25
+                Rectangle { y: 24; width: parent.width; height: 1; color: Appearance.tone("#303030") }
+                Rectangle {
+                    x: 3; y: 5; width: 14; height: 14; color: modelData.checked ? Appearance.accent("#FFFA00") : "transparent"
+                    border.color: modelData.checked ? Appearance.accent("#FFFA00") : Appearance.tone("#777777")
+                    NotesGlyph { anchors.centerIn: parent; width: 9; height: 9; kind: "check"; ink: Appearance.tone("#181818"); visible: modelData.checked }
+                    MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: notesController.toggleNoteTask(card.entry.id, modelData.id) }
+                }
+                TextInput {
+                    id: taskText; x: 23; y: 2; width: Math.max(20, taskRow.width - 88); height: 21
+                    text: modelData.text; color: modelData.checked || text === "" ? Appearance.tone("#8A8A8A") : Appearance.tone("#EDEDED")
+                    font.family: harmonyRegular.name; font.pixelSize: 11; selectByMouse: true
+                    font.strikeout: modelData.checked; renderType: Text.CurveRendering
+                    onAccepted: { if (text.trim()) notesController.updateNoteTask(card.entry.id, modelData.id, text); focus = false }
+                    onActiveFocusChanged: {
+                        if (activeFocus) card.selectedRequested(card.entry.id)
+                        else if (text.trim() && text.trim() !== modelData.text) notesController.updateNoteTask(card.entry.id, modelData.id, text)
+                    }
+                }
+                Row {
+                    x: taskRow.width - 61; y: 3; spacing: 2
+                    Repeater {
+                        model: [{kind: "up", offset: -1}, {kind: "down", offset: 1}, {kind: "close", offset: 0}]
+                        delegate: Item {
+                            required property var modelData; width: 18; height: 18
+                            Rectangle { anchors.fill: parent; color: rowMouse.containsMouse ? Appearance.tone("#343434") : "transparent" }
+                            NotesGlyph { anchors.centerIn: parent; width: 9; height: 9; kind: modelData.kind; ink: Appearance.tone("#A0A0A0") }
+                            MouseArea { id: rowMouse; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor; onClicked: { if (modelData.offset === 0) notesController.removeNoteTask(card.entry.id, taskRow.modelData.id); else notesController.moveNoteTask(card.entry.id, taskRow.modelData.id, modelData.offset) } }
+                        }
+                    }
+                }
+            }
+        }
+        Item {
+            y: parent.height - 25; width: parent.width; height: 22
+            TextInput {
+                id: addTask; x: 5; width: parent.width - 30; height: 22
+                color: Appearance.tone("#EDEDED"); font.family: harmonyRegular.name; font.pixelSize: 11; selectByMouse: true
+                renderType: Text.CurveRendering
+                onAccepted: { if (text.trim() && notesController.addNoteTask(card.entry.id, text)) text = "" }
+            }
+            Text { x: 5; height: 22; verticalAlignment: Text.AlignVCenter; visible: addTask.text === "" && !addTask.activeFocus; text: qsTr("+ 添加事项"); color: Appearance.tone("#777777"); font.family: harmonyRegular.name; font.pixelSize: 11; renderType: Text.CurveRendering }
+            Item {
+                x: parent.width - 22; width: 22; height: 22
+                Rectangle { anchors.fill: parent; color: addMouse.containsMouse ? Appearance.accent("#FFFA00") : Appearance.tone("#2B2B2B") }
+                Text { anchors.centerIn: parent; text: "+"; color: addMouse.containsMouse ? Appearance.tone("#161616") : Appearance.tone("#EDEDED"); font.family: harmonyBold.name; font.pixelSize: 14; font.weight: Font.Bold }
+                MouseArea { id: addMouse; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor; onClicked: { if (addTask.text.trim() && notesController.addNoteTask(card.entry.id, addTask.text)) addTask.text = ""; else addTask.forceActiveFocus() } }
+            }
+        }
+    }
+
+    Item {
+        id: imageBody; x: 5; y: 29; width: card.width - 10; height: card.height - 35
+        visible: card.entry.kind === "image" && !card.redacted; clip: true
+        Image { anchors.fill: parent; source: card.entry.imageUrl; fillMode: Image.PreserveAspectFit; asynchronous: true; cache: true; smooth: true; mipmap: true }
+        Text { anchors.centerIn: parent; visible: !card.entry.imageAvailable; text: qsTr("图片不可用"); color: Appearance.tone("#8A8A8A"); font.family: harmonyRegular.name; font.pixelSize: 11; renderType: Text.CurveRendering }
+        MouseArea { anchors.fill: parent; onPressed: card.selectedRequested(card.entry.id) }
+    }
+    MediaPreview { x: 5; y: 29; width: card.width - 10; height: card.height - 29; visible: (card.entry.kind === "video" || card.entry.kind === "gif") && !card.redacted; kind: card.entry.kind; source: card.entry.mediaUrl || ""; presented: visible && card.visible }
+
+    Item {
+        id: drawingBody; x: 5; y: 29; width: card.width - 10; height: Math.max(1, card.height - 56)
+        visible: card.entry.kind === "drawing" && !card.redacted; clip: true
+        Canvas {
+            id: drawingCanvas; anchors.fill: parent
+            onPaint: {
+                const ctx = getContext("2d")
+                ctx.clearRect(0, 0, width, height)
+                const all = card.entry.strokes || []
+                function drawStroke(stroke, points) {
+                    if (!points || points.length === 0) return
+                    ctx.beginPath(); ctx.lineCap = "round"; ctx.lineJoin = "round"
+                    ctx.lineWidth = stroke.width; ctx.strokeStyle = stroke.color
+                    ctx.moveTo(points[0].x * width, points[0].y * height)
+                    if (points.length === 1) ctx.lineTo(points[0].x * width + 0.01, points[0].y * height)
+                    for (let i = 1; i < points.length; ++i) ctx.lineTo(points[i].x * width, points[i].y * height)
+                    ctx.stroke()
+                }
+                for (let i = 0; i < all.length; ++i) drawStroke(all[i], all[i].points)
+                if (!card.host.drawingErasing) drawStroke({width: card.host.drawingWidth, color: card.host.drawingColor}, drawInput.points)
+            }
+        }
+        MouseArea {
+            id: drawInput; anchors.fill: parent; acceptedButtons: Qt.LeftButton | Qt.RightButton
+            hoverEnabled: true; cursorShape: Qt.CrossCursor
+            property var points: []
+            function addPoint(x, y) {
+                const next = {x: Math.max(0, Math.min(1, x / width)), y: Math.max(0, Math.min(1, y / height))}
+                const copy = points.slice(); const last = copy.length ? copy[copy.length - 1] : null
+                if (!last || Math.hypot((last.x - next.x) * width, (last.y - next.y) * height) >= 0.8) copy.push(next)
+                points = copy; drawingCanvas.requestPaint()
+            }
+            onPressed: mouse => {
+                card.selectedRequested(card.entry.id)
+                if (mouse.button === Qt.RightButton) { card.host.drawingErasing = !card.host.drawingErasing; points = []; return }
+                points = []; addPoint(mouse.x, mouse.y)
+            }
+            onPositionChanged: mouse => { if (pressed && (pressedButtons & Qt.LeftButton)) addPoint(mouse.x, mouse.y) }
+            onReleased: mouse => {
+                if (mouse.button !== Qt.LeftButton || points.length === 0) return
+                if (card.host.drawingErasing)
+                    notesController.eraseDrawingPath(card.entry.id, points, card.host.drawingWidth / Math.max(1, Math.min(width, height)) / 2)
+                else notesController.appendStroke(card.entry.id, points, card.host.drawingWidth, card.host.drawingColor)
+                points = []; drawingCanvas.requestPaint()
+            }
+            onWheel: wheel => {
+                card.host.drawingWidth = Math.max(1, Math.min(80, card.host.drawingWidth + (wheel.angleDelta.y > 0 ? 1 : -1)))
+                wheel.accepted = true
+            }
+        }
+        Connections { target: notesController; function onStateChanged() { drawingCanvas.requestPaint() } }
+    }
+    Row {
+        x: 5; y: card.height - 25; spacing: 5; visible: card.entry.kind === "drawing" && !card.redacted
+        Item {
+            width: 20; height: 20
+            Rectangle { anchors.fill: parent; color: card.host.drawingColor; border.color: Appearance.tone("#777777") }
+            MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: card.host.cycleDrawingColor() }
+        }
+        Rectangle {
+            width: 54; height: 20; color: Appearance.tone("#282828"); border.color: Appearance.tone("#4B4B4B")
+            Text { anchors.centerIn: parent; text: Math.round(card.host.drawingWidth) + " px"; color: Appearance.tone("#EDEDED"); font.family: harmonyRegular.name; font.pixelSize: 10; renderType: Text.CurveRendering }
+            MouseArea { anchors.fill: parent; onWheel: wheel => { card.host.drawingWidth = Math.max(1, Math.min(80, card.host.drawingWidth + (wheel.angleDelta.y > 0 ? 1 : -1))); wheel.accepted = true } }
+        }
+        Item {
+            width: 20; height: 20
+            Rectangle { anchors.fill: parent; color: card.host.drawingErasing ? Appearance.accent("#FFFA00") : eraserMouse.containsMouse ? Appearance.tone("#373737") : Appearance.tone("#282828"); border.color: Appearance.tone("#4B4B4B") }
+            NotesGlyph { anchors.centerIn: parent; width: 11; height: 11; kind: "eraser"; ink: card.host.drawingErasing ? Appearance.tone("#151515") : Appearance.tone("#EDEDED") }
+            MouseArea { id: eraserMouse; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor; onClicked: card.host.drawingErasing = !card.host.drawingErasing }
+        }
+        Item {
+            width: 20; height: 20
+            Rectangle { anchors.fill: parent; color: clearMouse.containsMouse ? "#E5383B" : Appearance.tone("#282828"); border.color: Appearance.tone("#4B4B4B") }
+            NotesGlyph { anchors.centerIn: parent; width: 10; height: 10; kind: "close"; ink: Appearance.tone("#EDEDED") }
+            MouseArea { id: clearMouse; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor; onClicked: notesController.clearDrawing(card.entry.id) }
+        }
+    }
+
+    Canvas {
+        anchors.fill: parent; z: 90
+        onPaint: {
+            const ctx = getContext("2d"); ctx.clearRect(0, 0, width, height)
+            ctx.strokeStyle = card.selected ? Appearance.accent("#FFFA00") : Appearance.tone("#8A8A8A"); ctx.lineWidth = 1
+            ctx.beginPath(); ctx.moveTo(width - 11, height - 3); ctx.lineTo(width - 3, height - 11)
+            ctx.moveTo(width - 7, height - 3); ctx.lineTo(width - 3, height - 7); ctx.stroke()
+        }
+    }
+    MouseArea {
+        id: resizeArea; x: card.width - 16; y: card.height - 16; width: 16; height: 16; z: 100
+        cursorShape: Qt.SizeFDiagCursor
+        property real startX; property real startY; property real originalWidth; property real originalHeight
+        onPressed: mouse => { card.selectedRequested(card.entry.id); startX = mouse.x; startY = mouse.y; originalWidth = card.width; originalHeight = card.height }
+        onPositionChanged: mouse => {
+            if (!pressed) return
+            const minimumWidth = card.entry.kind === "todo" ? 180 : 110
+            const minimumHeight = card.entry.kind === "todo" ? 105 : 70
+            card.width = Math.max(minimumWidth, Math.min(card.host.width - card.x, originalWidth + mouse.x - startX))
+            card.height = Math.max(minimumHeight, Math.min(card.host.height - card.y, originalHeight + mouse.y - startY))
+            if (card.entry.kind === "drawing") drawingCanvas.requestPaint()
+        }
+        onReleased: card.geometryCommitted(card.entry.id, card.x, card.y, card.width, card.height)
+    }
+
+    Row {
+        x: Math.min(card.host.width - card.x - 56, Math.max(0, card.width - 61)); y: 27; spacing: 6; z: 150
+        visible: card.deleteArmed
+        Item {
+            width: 25; height: 25
+            Rectangle { anchors.fill: parent; color: cancelMouse.containsMouse ? Appearance.tone("#353535") : Appearance.tone("#242424"); border.color: Appearance.tone("#555555") }
+            NotesGlyph { anchors.centerIn: parent; width: 11; height: 11; kind: "close"; ink: Appearance.tone("#EEEEEE") }
+            MouseArea { id: cancelMouse; anchors.fill: parent; hoverEnabled: true; cursorShape: Qt.PointingHandCursor; onClicked: card.deleteCancelled() }
+        }
+        Item {
+            width: 25; height: 25
+            Rectangle { anchors.fill: parent; color: Appearance.accent("#FFFA00") }
+            NotesGlyph { anchors.centerIn: parent; width: 11; height: 11; kind: "check"; ink: Appearance.tone("#151515") }
+            MouseArea { anchors.fill: parent; cursorShape: Qt.PointingHandCursor; onClicked: card.deleteConfirmed(card.entry.id) }
+        }
+    }
+}
