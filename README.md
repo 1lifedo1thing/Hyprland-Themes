@@ -23,10 +23,13 @@ These features originate in both upstream projects and the derivative's modifica
 
 ### Video demonstrations
 
-- [Showcase — settings and wallpapers](assets/videos/showcase.mp4)
-- [Dynamic theme switching](assets/videos/theme-switching.mp4)
+| ▶ [Irideshell Showcase](assets/videos/showcase.mp4) | ▶ [Dynamic Theme Switching](assets/videos/theme-switching.mp4) |
+| :---: | :---: |
+| [![Watch the showcase — desktop preview](assets/screenshots/dashboard.webp)](assets/videos/showcase.mp4) | [![Watch theme switching — desktop preview](assets/screenshots/bibian.webp)](assets/videos/theme-switching.mp4) |
+| Settings, wallpapers and desktop integration · 1:00 | Theme transitions and customization · 1:05 |
+| [Watch video](assets/videos/showcase.mp4) · [Download MP4](https://raw.githubusercontent.com/pedrogonzalez-png/Irideshell/main/assets/videos/showcase.mp4) | [Watch video](assets/videos/theme-switching.mp4) · [Download MP4](https://raw.githubusercontent.com/pedrogonzalez-png/Irideshell/main/assets/videos/theme-switching.mp4) |
 
-Full, silent demonstrations of the original desktop (60 s and 65 s). Links open the MP4 files on GitHub. Optional integrations such as HyprEndfield are not included in the installer.
+Click a preview to open the complete, silent recording on GitHub. The images are desktop screenshots, not embedded players. If GitHub does not play the file in your browser, use the MP4 link. Optional integrations such as HyprEndfield require separate installation.
 
 ### Desktop screenshots
 
