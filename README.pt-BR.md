@@ -21,11 +21,58 @@ As funcionalidades combinam contribuições dos projetos originais e modificaç�
 
 ## Galeria e demonstrações
 
+### Vídeos de demonstração
+
+- [Showcase — configuração e wallpapers](assets/videos/showcase.mp4)
+- [Troca dinâmica de temas](assets/videos/theme-switching.mp4)
+
+Vídeos completos de demonstração do desktop de origem, sem áudio (60 s e 65 s). Os links abrem os arquivos MP4 no GitHub. Integrações opcionais, como HyprEndfield, não acompanham o instalador.
+
+### Capturas do desktop
+
+**Bibian**
+
+![Bibian](assets/screenshots/bibian.webp)
+
+**Haimiya**
+
+![Haimiya](assets/screenshots/haimiya.webp)
+
+**Mosaico de wallpapers**
+
+![Mosaico de wallpapers](assets/screenshots/collage.webp)
+
+**Shorekeeper**
+
+![Shorekeeper](assets/screenshots/shorekeeper.webp)
+
+**Pastis**
+
+![Pastis](assets/screenshots/pastis.webp)
+
+**Seletor de wallpapers**
+
+![Seletor de wallpapers](assets/screenshots/wallpaper-picker.webp)
+
+**Wallpapers animados**
+
+![Wallpapers animados](assets/screenshots/animated-wallpapers.webp)
+
+**Editor de cores**
+
+![Editor de cores](assets/screenshots/color-editor.webp)
+
+**Dashboard de aplicativos**
+
+![Dashboard de aplicativos](assets/screenshots/dashboard.webp)
+
+### Paletas
+
 ![As 15 paletas escuras do Irideshell](assets/gallery/palettes.svg)
 
 A galeria usa as cores reais dos JSONs de temas publicados. É uma referência de paletas, não uma captura do desktop. Consulte a [tabela completa](docs/PALETTES.md).
 
-Capturas e dois vídeos permanecem fora do repositório até a revisão dos direitos das artes e da privacidade. Wallpapers pessoais e layouts privados completos não acompanham o pacote. Veja o [plano de mídia](docs/MEDIA-PLAN.md).
+As capturas e os vídeos completos são demonstrações fornecidas pelo mantenedor, não wallpapers distribuídos pelo instalador. As artes e marcas de terceiros permanecem sob os direitos dos respectivos titulares; não são licenciadas pela GPL do código. A instalação limpa não foi validada. Veja o [plano de mídia](docs/MEDIA-PLAN.md).
 
 ## Módulos
 

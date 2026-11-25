@@ -21,11 +21,58 @@ These features originate in both upstream projects and the derivative's modifica
 
 ## Showcase
 
+### Video demonstrations
+
+- [Showcase — settings and wallpapers](assets/videos/showcase.mp4)
+- [Dynamic theme switching](assets/videos/theme-switching.mp4)
+
+Full, silent demonstrations of the original desktop (60 s and 65 s). Links open the MP4 files on GitHub. Optional integrations such as HyprEndfield are not included in the installer.
+
+### Desktop screenshots
+
+**Bibian**
+
+![Bibian](assets/screenshots/bibian.webp)
+
+**Haimiya**
+
+![Haimiya](assets/screenshots/haimiya.webp)
+
+**Multi-wallpaper collage**
+
+![Multi-wallpaper collage](assets/screenshots/collage.webp)
+
+**Shorekeeper**
+
+![Shorekeeper](assets/screenshots/shorekeeper.webp)
+
+**Pastis**
+
+![Pastis](assets/screenshots/pastis.webp)
+
+**Wallpaper picker**
+
+![Wallpaper picker](assets/screenshots/wallpaper-picker.webp)
+
+**Animated wallpapers**
+
+![Animated wallpapers](assets/screenshots/animated-wallpapers.webp)
+
+**Color editor**
+
+![Color editor](assets/screenshots/color-editor.webp)
+
+**Application dashboard**
+
+![Application dashboard](assets/screenshots/dashboard.webp)
+
+### Palettes
+
 ![The 15 Irideshell dark palettes](assets/gallery/palettes.svg)
 
 The swatches are derived from the actual published theme JSON files. This is a palette reference, not a screenshot of a running desktop. See the [full palette table](docs/PALETTES.md).
 
-Desktop screenshots and two recorded demonstrations are retained privately until their artwork rights and privacy review are complete. Personal wallpapers and complete private layouts are not bundled. See [media plan](docs/MEDIA-PLAN.md).
+Screenshots and full videos are maintainer-provided demonstrations, not wallpapers distributed by the installer. Third-party artwork and trademarks remain subject to their respective owners’ rights and are not licensed by the code’s GPL. Clean-system installation is not validated. See [media plan](docs/MEDIA-PLAN.md).
 
 ## Modules
 
