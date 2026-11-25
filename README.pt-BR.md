@@ -92,18 +92,46 @@ As capturas e os vídeos completos são demonstrações fornecidas pelo mantened
 
 Widgets e ferramentas de wallpaper fazem parte de `shell`, não são módulos independentes nesta versão. HyprEndfield é opcional: [compilação e instalação local a partir de um arquivo-fonte autorizado](docs/HYPRENDFIELD.md). O [código-fonte personalizado do HUD](vendor/hyprendfield/IRIDESHELL.md) está disponível para revisão; o aplicativo compilado, os recursos necessários derivados do jogo e o SDDM não estão incluídos.
 
-## Experimente o instalador em ambiente descartável
+## Instalação rápida — prévia de desenvolvimento
 
-Execute como usuário comum. Não teste a instalação real sobre seu desktop de uso diário. Os comandos abaixo somente listam ou simulam:
+**Use uma VM Arch Linux descartável ou uma conta de teste, não seu desktop de uso diário.** A instalação gráfica em um Arch limpo ainda não foi validada. Tenha Git, Bash e Python 3 disponíveis; cada módulo exige seus próprios programas instalados.
+
+### 1. Baixe o projeto
 
 ```bash
+git clone --depth 1 https://github.com/pedrogonzalez-png/Irideshell.git
+cd Irideshell
 ./setup list
-./setup install --modules launcher
-./setup install --modules terminal
 ./setup doctor
 ```
 
-Para o shell ou desktop completo, `./setup prepare --apply` baixa as revisões fixadas dos projetos originais e monta `prepared/`, sem modificar o desktop. `./setup install` simula a instalação completa. O instalador de arquivos não instala dependências do sistema; o `bootstrap` experimental separado chama o instalador original e não é coberto por nossos backups. Consulte o [guia técnico](docs/DEVELOPMENT.md) antes de qualquer instalação real.
+### 2. Escolha um módulo e simule
+
+```bash
+./setup install --modules launcher
+./setup install --modules terminal
+```
+
+Esses comandos não alteram sua configuração. Rofi ou Kitty/Fish/Fastfetch, respectivamente, já devem estar instalados antes de aplicar o módulo correspondente. Os temas exigem um shell compatível.
+
+### 3. Prepare o desktop completo (opcional)
+
+```bash
+./setup prepare --apply
+./setup install
+```
+
+A preparação baixa as revisões fixadas dos projetos originais e monta `prepared/` dentro do repositório, sem modificar o desktop. O segundo comando apenas simula a instalação dos arquivos. O instalador não instala dependências do sistema. O bootstrap experimental separado pode alterar pacotes, serviços e configurações existentes: use-o somente em uma VM descartável, após criar um snapshot.
+
+### 4. Aplique somente em ambiente de teste
+
+Por exemplo, após instalar os pré-requisitos do launcher e revisar a simulação:
+
+```bash
+./setup install --modules launcher --apply
+```
+
+Arquivos existentes diferentes são recusados, exceto quando você autoriza expressamente a substituição com `--replace`. Não use essa opção sem revisar o plano. O instalador não recarrega o desktop automaticamente. Para instalação completa, recuperação, dependências e limites dos backups, leia primeiro o [guia técnico](docs/DEVELOPMENT.md). O dashboard nativo é o padrão; o [HyprEndfield](docs/HYPRENDFIELD.md) é opcional e exige recursos locais autorizados.
 
 ## Gerenciamento
 

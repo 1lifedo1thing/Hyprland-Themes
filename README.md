@@ -92,18 +92,46 @@ Screenshots and full videos are maintainer-provided demonstrations, not wallpape
 
 Widgets and wallpaper tools are part of `shell`, not separately installable modules yet. HyprEndfield is optional: [local build and installation from an authorized source archive](docs/HYPRENDFIELD.md). [Personalized HUD source](vendor/hyprendfield/IRIDESHELL.md) is available for review; the compiled application, required game-derived assets and SDDM are not bundled.
 
-## Try the installer in a disposable environment
+## Quick start — development preview
 
-Run as a normal user. Do not install over a working desktop for testing. The following commands only list or simulate the operation:
+**Use a disposable Arch Linux VM or test account, not your everyday desktop.** A clean graphical installation has not been validated. Start with Git, Bash and Python 3 available; the selected modules require their own installed programs.
+
+### 1. Get the project
 
 ```bash
+git clone --depth 1 https://github.com/pedrogonzalez-png/Irideshell.git
+cd Irideshell
 ./setup list
-./setup install --modules launcher
-./setup install --modules terminal
 ./setup doctor
 ```
 
-For the shell or full desktop, `./setup prepare --apply` downloads pinned upstream repositories into `prepared/`, without changing desktop settings. `./setup install` then previews the full overlay. Required system dependencies are not installed by the overlay; the separate experimental `bootstrap` delegates to the upstream installer and is not covered by our file backups. See the [development guide](docs/DEVELOPMENT.md) before any real installation.
+### 2. Choose a module and preview
+
+```bash
+./setup install --modules launcher
+./setup install --modules terminal
+```
+
+These commands do not change your configuration. Rofi, or Kitty/Fish/Fastfetch respectively, must already be installed before applying the corresponding module. Themes require a compatible shell.
+
+### 3. Prepare the full desktop (optional)
+
+```bash
+./setup prepare --apply
+./setup install
+```
+
+Preparation downloads the pinned upstream repositories and assembles `prepared/` inside the checkout, not your desktop. The second command only previews the configuration overlay. The overlay does not install system dependencies. The separate experimental upstream bootstrap may change packages, services and existing configurations; use it only in a disposable VM after taking a snapshot.
+
+### 4. Apply only in a test environment
+
+For example, once the launcher prerequisites are installed and its preview has been reviewed:
+
+```bash
+./setup install --modules launcher --apply
+```
+
+Different existing files are refused unless you explicitly authorize replacement with `--replace`. Do not use that option blindly. The installer does not automatically reload the desktop. For full desktop installation, recovery, dependency boundaries and backup limitations, read the [technical guide](docs/DEVELOPMENT.md) first. The native dashboard is the default; [HyprEndfield](docs/HYPRENDFIELD.md) is optional and requires authorized local resources.
 
 ## Manage your installation
 

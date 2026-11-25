@@ -1,13 +1,16 @@
-# Hyprland-Themes — Stage 4 (private development preview)
+# Irideshell — technical installation and development guide
 
-Integrated, modular desktop derived from end-4 and pctrade. GPL-3.0; see LICENSE, CREDITS-DRAFT.md and upstream notices. **Not a release. Do not run the bootstrap or install the desktop on your working PC.** No personal wallpaper images or user layout state are included. The 15 named schemes are available; sample desktop layouts and artwork rights remain outstanding.
+Integrated, modular desktop derived from end-4 and pctrade. GPL-3.0; see LICENSE, CREDITS.md and upstream notices. **Not a release. Do not run the bootstrap or install the desktop on your working PC.** No personal wallpaper images or user layout state are included. The 15 named schemes are available; sample desktop layouts and artwork rights remain outstanding.
 
 ## Prepare without touching the desktop
 
-Extract this archive to a new folder. Run as a normal user, not root:
+Clone the public development preview into a new folder (or use an already reviewed checkout). Run as a normal user, not root:
 
 ```bash
+git clone --depth 1 https://github.com/pedrogonzalez-png/Irideshell.git
+cd Irideshell
 ./setup list
+./setup doctor
 ./setup prepare --apply
 ```
 
@@ -36,7 +39,7 @@ Bootstrap delegates to the pinned **original end-4 setup install**, including de
 ./setup install --modules themes,terminal
 ```
 
-Add `--apply` only on a test installation after reviewing the simulation. Differing existing files require `--replace`. Rofi and terminal modules don't need `prepare`. Themes require a compatible shell; shell and desktop-base require `prepare` and dependencies already installed. Shell installs helpers without activating automatic Kitty/Fish synchronization; terminal installs an opt-in marker. Other existing upstream theme integrations and manual edits in the terminal UI may still touch terminal settings. Shell contains the widgets, static/animated wallpaper selector and collage as tightly coupled features, not independent standalone modules. HyprEndfield integration code exists but the separate application is not shipped; do not select its settings style. SDDM not included. No automatic legacy wallpaper/theme watcher or older collage Python writer is installed. The updated switchwall reads explicit wallpaper bindings and falls back to name matching. Existing unmatched wallpapers retain the current scheme.
+Add `--apply` only on a test installation after reviewing the simulation. Differing existing files require `--replace`. Rofi and terminal modules don't need `prepare`. Themes require a compatible shell; shell and desktop-base require `prepare` and dependencies already installed. Shell installs helpers without activating automatic Kitty/Fish synchronization; terminal installs an opt-in marker. Other existing upstream theme integrations and manual edits in the terminal UI may still touch terminal settings. Shell contains the widgets, static/animated wallpaper selector and collage as tightly coupled features, not independent standalone modules. The native dashboard is the default. The personalized HyprEndfield source is published separately in `vendor/hyprendfield/`, but the application and required assets are not shipped. Do not select the HUD settings style without a working local installation; see [optional HUD instructions](HYPRENDFIELD.md). SDDM not included. No automatic legacy wallpaper/theme watcher or older collage Python writer is installed. The updated switchwall reads explicit wallpaper bindings and falls back to name matching. Existing unmatched wallpapers retain the current scheme.
 
 Backups: `~/.local/share/Hyprland-Themes/backups/` (or XDG_DATA_HOME). Existing-file copies and manifest for each overlay transaction; attempts rollback on ordinary failure. Does not guarantee rollback after interrupted system installs, crashes or power loss. File-level lifecycle commands are now available; see below. Symlinks are refused at installation destinations, except the two known end4-pC SVG icon aliases when they point directly to a regular file in the same directory and both prepared files and the existing target have identical SHA-256 hashes. Such aliases are left untouched. No root execution of our installer. Only default ~/.config supported. See STAGE3-AUDIT.md for test scope and caveats.
 
@@ -62,8 +65,8 @@ An interrupted transaction leaves a pending marker and blocks further operations
 
 ## Release preflight (Stage 5)
 
-`./setup audit` is a read-only inspection of the project and assembled modules; it is not a license clearance or runtime test. See [RELEASE-AUDIT.md](../RELEASE-AUDIT.md), [CREDITS.md](../CREDITS.md), and [MODIFICATIONS.md](../MODIFICATIONS.md). Do not commit the local audit report or prepared repository copies. This remains a private development preview.
+`./setup audit` is a read-only inspection of the project and assembled modules; it is not a license clearance or runtime test. See [RELEASE-AUDIT.md](../RELEASE-AUDIT.md), [CREDITS.md](../CREDITS.md), and [MODIFICATIONS.md](../MODIFICATIONS.md). Do not commit the local audit report or prepared repository copies. This remains a public development preview, not a cleared assembled release.
 
 ### Refresh a previously prepared development tree
 
-After applying the Stage 5 follow-up patch, run `python3 scripts/refresh_prepared.py` from this project. It rebuilds only `prepared/` using the already downloaded pinned Git checkouts, preserves the old tree as an ignored `.prepare-backup-*` directory, and verifies the old manifest first. It does not install or change HOME configuration. Run `./setup audit` again afterwards. This is still a private preview; no clean Arch test was performed.
+After reviewing and updating your local project checkout, run `python3 scripts/refresh_prepared.py` from this project. It rebuilds only `prepared/` using the already downloaded pinned Git checkouts, preserves the old tree as an ignored `.prepare-backup-*` directory, and verifies the old manifest first. It does not install or change HOME configuration. Run `./setup audit` again afterwards. No clean Arch test was performed; this is not a runtime validation.
