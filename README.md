@@ -1,102 +1,67 @@
-# Hyprland-Themes
+<p align="center"><img src="assets/brand/banner.png" alt="Irideshell — One desktop. Infinite identities." width="100%"></p>
 
-Custom desktop preset and five character-inspired color schemes for **Arch Linux + Hyprland + Quickshell (end-4 illogical-impulse / end4-pC)**. Includes the public Hyprland Lua config, Quickshell widgets and animated-wallpaper modifications, Rofi launcher, Kitty/Fish/Fastfetch settings and wallpaper-to-theme automation.
+<p align="center"><a href="README.pt-BR.md">Português (Brasil)</a> · <a href="CREDITS.md">Credits</a> · <a href="LICENSE">GPL-3.0</a> · <a href="docs/DEVELOPMENT.md">Development guide</a></p>
 
-> **Not a standalone desktop distribution.** First install [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland) using its [official instructions](https://ii.clsty.link/). The full installer is an experimental customization layer and does not install Arch Linux, Hyprland or all system dependencies.
+> **Source-only development preview — target: v0.9.0-beta.** Not yet released. Assembly and dry-run were tested on the source Arch machine; clean-system installation and graphical runtime of the assembled package remain untested. Public distribution is pending the [release audit](RELEASE-AUDIT.md).
 
-## Themes
+## Make the desktop yours
 
-| Scheme | Inspiration |
+Irideshell is a modular Hyprland desktop configuration derived from illogical-impulse and end4-pC. Its focus is a coherent theme experience: change a wallpaper and recover the associated palette, widget layout and collage profile. Choose the components you need instead of replacing your entire desktop.
+
+### Highlights
+
+- **Wallpaper-linked themes:** named palettes, primary/secondary/tertiary color editing and image associations.
+- **Persistent layouts:** per-wallpaper widget positions, sizes and images; per-scheme collage profiles.
+- **Wallpaper manager:** static and animated libraries, import and preview controls.
+- **Theme Studio:** color editing, contrast, opacity, theme avatar and card images.
+- **Terminal integration:** optional Kitty, Fish and Fastfetch configuration and theme synchronization.
+- **Modular setup:** dry-run by default, file-level backups, selective updates and uninstall.
+
+These features originate in both upstream projects and the derivative's modifications; see [modification history](MODIFICATIONS.md). The original desktop demonstrates them; the assembled installer has not yet been visually validated.
+
+## Showcase
+
+The gallery and two demonstration videos have been selected for the release draft. They will be linked here only after media-rights and privacy review. Personal wallpapers, character artwork and complete private layout profiles are not bundled. See [media plan](docs/MEDIA-PLAN.md).
+
+## Modules
+
+| Module | Scope | Requirements |
+| --- | --- | --- |
+| `launcher` | Rofi compact launcher and dashboard | Rofi |
+| `terminal` | Kitty, Fish, Fastfetch and helpers | Kitty, Fish, Fastfetch |
+| `themes` | 15 named color schemes | Compatible shell |
+| `shell` | Quickshell, widgets, wallpapers, collage | Prepared base and compatible dependencies |
+| `desktop-base` | Hyprland and Matugen configuration | Prepared base; also selects shell |
+| `desktop` | All of the above | All applicable requirements |
+
+Widgets and wallpaper tools are part of `shell`, not separately installable modules yet. HyprEndfield is optional integration code only; the application and SDDM are not bundled.
+
+## Try the installer in a disposable environment
+
+Run as a normal user. Do not install over a working desktop for testing. The following commands only list or simulate the operation:
+
+```bash
+./setup list
+./setup install --modules launcher
+./setup install --modules terminal
+./setup doctor
+```
+
+For the shell or full desktop, `./setup prepare --apply` downloads pinned upstream repositories into `prepared/`, without changing desktop settings. `./setup install` then previews the full overlay. Required system dependencies are not installed by the overlay; the separate experimental `bootstrap` delegates to the upstream installer and is not covered by our file backups. See the [development guide](docs/DEVELOPMENT.md) before any real installation.
+
+## Manage your installation
+
+| Command | Purpose |
 | --- | --- |
-| Changli | Wuthering Waves |
-| Hiyuki | Wuthering Waves |
-| Emilia | Re:Zero |
-| Furina | Genshin Impact |
-| Hotline Miami | Hotline Miami |
+| `./setup update` | Preview an update from the local project version |
+| `./setup backup` | Back up managed configuration files |
+| `./setup restore` | Reverse the latest completed transaction |
+| `./setup uninstall --modules launcher` | Preview selective removal |
+| `./setup doctor` | Static dependency and managed-file checks |
+| `./setup audit` | Release preflight (heuristic, not certification) |
 
-## Option A: themes only (safer)
+Mutating operations require `--apply`; replacements require `--replace` where supported. File backups do not include personal wallpaper/layout state or system package changes. The installer does not automatically fetch updates or remove system packages.
 
-For an existing illogical-impulse and [pctrade/end4-pC](https://github.com/pctrade/end4-pC) installation:
+## License and attribution
 
-```bash
-git clone https://github.com/pedrogonzalez-png/Hyprland-Themes.git
-cd Hyprland-Themes
-bash install.sh --all
-# Or only one: bash install.sh changli
-```
-
-The theme installer makes backups when overwriting theme files and leaves Hyprland, wallpaper, keybinds and running services untouched. Select a scheme under **end4-pC Settings → Color scheme**. To view a matching Fastfetch preset:
-
-```bash
-fastfetch --config "$HOME/.config/fastfetch/themes/changli.json"
-```
-
-## Option B: complete desktop customization (experimental)
-
-**Start with a disposable/test Arch user or VM** that already has end-4 illogical-impulse installed. Your end4-pC working tree must be clean and pinned to the commit in [overrides/end4-pC-base-commit.txt](overrides/end4-pC-base-commit.txt). The verified patch base is `8fbb6716cba628a13103e665e9538021683a7250`, from the official pctrade repository.
-
-```bash
-git clone https://github.com/pedrogonzalez-png/Hyprland-Themes.git
-cd Hyprland-Themes
-
-# ONLY when ~/.config/quickshell/end4-pC does not exist:
-bash install-desktop.sh --prepare-base
-
-# Does not change ~/.config or ~/.local:
-bash install-desktop.sh --check
-
-# On a test installation, after reviewing changes:
-bash install-desktop.sh --apply
-```
-
-`--prepare-base` clones pctrade/end4-pC at the pinned commit. It refuses to replace an existing directory. `--apply` refuses an altered or different-version checkout, requires typing `APLICAR`, takes backups and attempts rollback if an ordinary command fails. Backups: `~/.local/share/Hyprland-Themes/backups/`. It does **not** start/stop applications, install system packages, or enable any systemd service. Read [INSTALL-DESKTOP.md](INSTALL-DESKTOP.md) before applying.
-
-If you already have a newer/customized end4-pC checkout, **do not delete or reset it just to run the installer**. Test with a fresh user/VM instead.
-
-### Enable wallpaper-linked themes (optional)
-
-After `--apply` and selecting a wallpaper in end4-pC:
-
-```bash
-~/.local/bin/end4-wallpaper-theme status
-~/.local/bin/end4-wallpaper-theme bind changli
-systemctl --user enable --now end4-wallpaper-theme.path
-```
-
-The watcher uses the `wallpaperPath` saved in illogical-impulse config. To unlink a wallpaper, run `~/.local/bin/end4-wallpaper-theme unbind`. To turn off the watcher: `systemctl --user disable --now end4-wallpaper-theme.path`. Wallpaper images and the optional file `wallpaper-scheme-links.json` are **not** included.
-
-### Fastfetch image (optional)
-
-The public `dots/.config/fastfetch/config.jsonc` uses the **automatic OS logo** so it works without a non-redistributable character image. To use your own Changli artwork, save it under `~/.config/fastfetch/images/Changli.webp` and change the logo block in the copied config to:
-
-```json
-"logo": {
-  "type": "kitty-icat",
-  "source": "~/.config/fastfetch/images/Changli.webp",
-  "width": 29
-}
-```
-
-Kitty supports the image protocol. Other terminals may require another logo type. No character images are bundled.
-
-## Contents
-
-```text
-end4-pC/                Five Quickshell color schemes
-fastfetch/               Five matching Fastfetch presets
-dots/                    Exported public Hyprland, Rofi, Kitty, Fish, Fastfetch and systemd config
-overrides/               Pinned Quickshell patch and four new source files
-install.sh               Themes-only installer
-install-desktop.sh       Experimental full-customization installer
-INSTALL-DESKTOP.md       Safety notes, preparation and recovery
-```
-
-The included Hyprland configuration references programs such as `qs`, `rofi`, `kitty`, `fish`, `fastfetch`, `btop`, `tty-clock`, `hyprshot`, and other upstream utilities. Their presence is not fully validated by `--check`; install required programs as needed following upstream instructions.
-
-**Not bundled:** private Controller Mode/game launcher and its scripts, Steam integration, user-specific settings, wallpaper files, character artwork or secret credentials. The public cheatsheet retains a nonfunctional reference to an old gaming-time shortcut; it does not install that tracker.
-
-## Credits
-
-- [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland) — upstream illogical-impulse desktop.
-- [pctrade/end4-pC](https://github.com/pctrade/end4-pC) — Quickshell fork customized here.
-- Character/game names and art belong to their respective owners. Unofficial fan project.
+Irideshell is a derivative of [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland) and [pctrade/end4-pC](https://github.com/pctrade/end4-pC), maintained by [pedrogonzalez-png](https://github.com/pedrogonzalez-png). The GPL-covered code remains under GPL v3. Third-party notices and licenses remain applicable. See [credits](CREDITS.md), [upstream revisions](upstream-lock.json) and [release audit](RELEASE-AUDIT.md). No affiliation with the game or character rights holders is claimed.

@@ -1,0 +1,7 @@
+# Development publication candidate — 2026-11-25
+
+This source-only candidate consolidates Stages 4–6 and the approved black/gold/white branding. It deliberately excludes `prepared/`, compiled shaders, bundled fonts, upstream images/audio, personal screenshots and recordings, backups, live settings, and dormant alternate local wallpaper services. `prepare` still retrieves pinned upstream code and resources locally. The assembled result is not cleared for redistribution.
+
+All five offline test programs (smoke, stage3, stage4, stage5, wallpaper_links) passed on this candidate. Python/JSON/SVG parsing and Bash syntax checks also passed (the upstream emoji dictionary script is not a conventional shell-only file and was excluded from Bash parsing). The source-tree credential-pattern scan identified no matching token pattern; two generic/synthetic path matches remain. This is not proof of absence of secrets or license clearance. The original upstream MIT/LGPL notice copies match the pinned Git blob IDs. Individual source notices, upstream compiled shader source and media rights are still subject to the release audit. No clean Arch GUI/VM test was performed, by project decision.
+
+Review the candidate and existing repository history before pushing any code to the public development branch. No beta release, tag, or default branch change is authorized by this candidate. The original desktop is not modified by the publication preparation script.

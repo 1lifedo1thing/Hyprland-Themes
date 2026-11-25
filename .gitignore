@@ -1,0 +1,14 @@
+/prepared/
+/.prepare-*/
+__pycache__/
+*.pyc
+
+# Local audit reports / private snapshots
+/relatorio-stage5.txt
+/release-audit*.txt
+*.tar.gz
+
+# Unreviewed showcase material (never publish raw media)
+/media-private/
+*.mp4
+*.webm
